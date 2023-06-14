@@ -1,0 +1,14 @@
+F:\IT\Application\Web Site\MIS\MIS\bin\Debug\MIS.exe.config
+F:\IT\Application\Web Site\MIS\MIS\bin\Debug\MIS.exe
+F:\IT\Application\Web Site\MIS\MIS\bin\Debug\MIS.pdb
+F:\IT\Application\Web Site\MIS\MIS\bin\Debug\EntityFramework.dll
+F:\IT\Application\Web Site\MIS\MIS\bin\Debug\EntityFramework.SqlServer.dll
+F:\IT\Application\Web Site\MIS\MIS\bin\Debug\EntityFramework.xml
+F:\IT\Application\Web Site\MIS\MIS\bin\Debug\EntityFramework.SqlServer.xml
+F:\IT\Application\Web Site\MIS\MIS\obj\Debug\MIS.FollowUpForm.resources
+F:\IT\Application\Web Site\MIS\MIS\obj\Debug\MIS.MotherForm.resources
+F:\IT\Application\Web Site\MIS\MIS\obj\Debug\MIS.Properties.Resources.resources
+F:\IT\Application\Web Site\MIS\MIS\obj\Debug\MIS.csproj.GenerateResource.Cache
+F:\IT\Application\Web Site\MIS\MIS\obj\Debug\MIS.exe
+F:\IT\Application\Web Site\MIS\MIS\obj\Debug\MIS.pdb
+F:\IT\Application\Web Site\MIS\MIS\obj\Debug\MIS.csprojResolveAssemblyReference.cache
