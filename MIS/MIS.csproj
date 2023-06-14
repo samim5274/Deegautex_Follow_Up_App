@@ -66,6 +66,12 @@
     <Compile Include="FollowUpTable.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
+    <Compile Include="FollowUpWiseReportFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FollowUpWiseReportFrom.Designer.cs">
+      <DependentUpon>FollowUpWiseReportFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="MIS.Context.cs">
       <AutoGen>True</AutoGen>
@@ -127,6 +133,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MISDBDataSet8.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MISDBDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet9.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MotherForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,11 +161,17 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_Purpose_Wise_Report_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FollowUpForm.resx">
       <DependentUpon>FollowUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FollowUpWiseReportFrom.resx">
+      <DependentUpon>FollowUpWiseReportFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MotherForm.resx">
       <DependentUpon>MotherForm.cs</DependentUpon>
@@ -273,6 +290,17 @@
     </None>
     <None Include="MISDBDataSet8.xss">
       <DependentUpon>MISDBDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet9.xsc">
+      <DependentUpon>MISDBDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet9.xss">
+      <DependentUpon>MISDBDataSet9.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

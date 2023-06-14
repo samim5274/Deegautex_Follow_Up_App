@@ -21,5 +21,12 @@ namespace MIS
             var q = context.SP_FollowUp();
             return q.ToList();
         }
+
+        public List<SP_Purpose_Wise_Report_Result> GetAllPurposeWiseReport(int PopId)
+        {
+            var context = new MISDBEntities();
+            var q = context.SP_Purpose_Wise_Report(PopId);
+            return q.ToList();
+        }
     }
 }

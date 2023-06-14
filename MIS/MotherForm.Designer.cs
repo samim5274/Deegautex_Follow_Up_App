@@ -31,10 +31,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.followUpIteamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.followUpIteamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.followUpReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,10 +64,18 @@
             // userToolStripMenuItem
             // 
             this.userToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.followUpIteamToolStripMenuItem});
+            this.followUpIteamToolStripMenuItem,
+            this.followUpReportToolStripMenuItem});
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
-            this.userToolStripMenuItem.Text = "User";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(113, 26);
+            this.userToolStripMenuItem.Text = "Information";
+            // 
+            // followUpIteamToolStripMenuItem
+            // 
+            this.followUpIteamToolStripMenuItem.Name = "followUpIteamToolStripMenuItem";
+            this.followUpIteamToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.followUpIteamToolStripMenuItem.Text = "Follow Up Iteam";
+            this.followUpIteamToolStripMenuItem.Click += new System.EventHandler(this.followUpIteamToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -86,12 +95,12 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
-            // followUpIteamToolStripMenuItem
+            // followUpReportToolStripMenuItem
             // 
-            this.followUpIteamToolStripMenuItem.Name = "followUpIteamToolStripMenuItem";
-            this.followUpIteamToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
-            this.followUpIteamToolStripMenuItem.Text = "Follow Up Iteam";
-            this.followUpIteamToolStripMenuItem.Click += new System.EventHandler(this.followUpIteamToolStripMenuItem_Click);
+            this.followUpReportToolStripMenuItem.Name = "followUpReportToolStripMenuItem";
+            this.followUpReportToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.followUpReportToolStripMenuItem.Text = "Follow Up Report";
+            this.followUpReportToolStripMenuItem.Click += new System.EventHandler(this.followUpReportToolStripMenuItem_Click);
             // 
             // MotherForm
             // 
@@ -100,7 +109,7 @@
             this.ClientSize = new System.Drawing.Size(1229, 665);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MotherForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MotherForm";
@@ -120,6 +129,7 @@
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem followUpIteamToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem followUpReportToolStripMenuItem;
     }
 }
 

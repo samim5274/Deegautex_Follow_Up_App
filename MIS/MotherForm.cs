@@ -25,5 +25,12 @@ namespace MIS
             obj.MdiParent = this;
             obj.Show();
         }
+
+        private void followUpReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var obj = new FollowUpWiseReportFrom();
+            obj.MdiParent = this;
+            obj.Show();
+        }
     }
 }

@@ -111,8 +111,7 @@ namespace MIS
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
-        
-
+    
         public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
         {
             var diagramnameParameter = diagramname != null ?
@@ -143,6 +142,15 @@ namespace MIS
         public virtual ObjectResult<SP_FollowUp_Result> SP_FollowUp()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_FollowUp_Result>("SP_FollowUp");
+        }
+    
+        public virtual ObjectResult<SP_Purpose_Wise_Report_Result> SP_Purpose_Wise_Report(Nullable<int> popId)
+        {
+            var popIdParameter = popId.HasValue ?
+                new ObjectParameter("PopId", popId) :
+                new ObjectParameter("PopId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Purpose_Wise_Report_Result>("SP_Purpose_Wise_Report", popIdParameter);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'F:\IT\Application\Web Site\MIS\MIS\MIS.edmx'. 
+﻿// T4 code generation is enabled for model 'F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\MIS.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
