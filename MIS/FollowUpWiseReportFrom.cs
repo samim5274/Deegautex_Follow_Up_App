@@ -26,10 +26,20 @@ namespace MIS
         private void FillPurpose()
         {
             var obj = new Manager();
+
+            var pp = new PurposeInfo { PId = 0, Purpose = "All Purpose" };
+
+            var plist = new List<PurposeInfo>();
+            plist.Add(pp);
+            
+
             var list = obj.FillAllPurpose();
+
+            plist.AddRange(plist);
+
             cbxPurpose.DisplayMember = "Purpose";
             cbxPurpose.ValueMember = "PId";
-            cbxPurpose.DataSource = list;
+            cbxPurpose.DataSource = plist;
         }
 
         private void FillGrid()
@@ -41,9 +51,9 @@ namespace MIS
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            var PopId = Convert.ToInt32(cbxPurpose.SelectedValue);
+            var pid = Convert.ToInt32(cbxPurpose.SelectedValue);
             var mngr = new Manager();
-            var list = mngr.GetAllPurposeWiseReport(PopId);
+            var list = mngr.GetAllPurposeWiseReport(pid);
             dgvFollowUpReport.DataSource = list;
         }
     }

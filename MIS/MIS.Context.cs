@@ -152,5 +152,23 @@ namespace MIS
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Purpose_Wise_Report_Result>("SP_Purpose_Wise_Report", popIdParameter);
         }
+    
+        public virtual ObjectResult<SP_Purpose_Wise_Follow_Report_Result> SP_Purpose_Wise_Follow_Report(Nullable<int> popId)
+        {
+            var popIdParameter = popId.HasValue ?
+                new ObjectParameter("PopId", popId) :
+                new ObjectParameter("PopId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Purpose_Wise_Follow_Report_Result>("SP_Purpose_Wise_Follow_Report", popIdParameter);
+        }
+    
+        public virtual ObjectResult<SP_Report_Result> SP_Report(Nullable<int> pID)
+        {
+            var pIDParameter = pID.HasValue ?
+                new ObjectParameter("PID", pID) :
+                new ObjectParameter("PID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Report_Result>("SP_Report", pIDParameter);
+        }
     }
 }

@@ -29,21 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxPurpose = new System.Windows.Forms.ComboBox();
             this.btnShow = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvFollowUpReport = new System.Windows.Forms.DataGridView();
-            this.mISDBDataSet9 = new MIS.MISDBDataSet9();
             this.sPPurposeWiseReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mISDBDataSet9 = new MIS.MISDBDataSet9();
             this.sP_Purpose_Wise_ReportTableAdapter = new MIS.MISDBDataSet9TableAdapters.SP_Purpose_Wise_ReportTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.purposeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.followUpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remarkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFollowUpReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurposeWiseReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet9)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,6 +93,14 @@
             this.dgvFollowUpReport.AllowUserToAddRows = false;
             this.dgvFollowUpReport.AllowUserToDeleteRows = false;
             this.dgvFollowUpReport.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFollowUpReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFollowUpReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFollowUpReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -98,22 +108,32 @@
             this.followUpDataGridViewTextBoxColumn,
             this.remarkDataGridViewTextBoxColumn});
             this.dgvFollowUpReport.DataSource = this.sPPurposeWiseReportBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFollowUpReport.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFollowUpReport.Location = new System.Drawing.Point(125, 201);
             this.dgvFollowUpReport.Name = "dgvFollowUpReport";
             this.dgvFollowUpReport.ReadOnly = true;
+            this.dgvFollowUpReport.RowHeadersVisible = false;
             this.dgvFollowUpReport.RowTemplate.Height = 24;
+            this.dgvFollowUpReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFollowUpReport.Size = new System.Drawing.Size(907, 415);
             this.dgvFollowUpReport.TabIndex = 4;
-            // 
-            // mISDBDataSet9
-            // 
-            this.mISDBDataSet9.DataSetName = "MISDBDataSet9";
-            this.mISDBDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sPPurposeWiseReportBindingSource
             // 
             this.sPPurposeWiseReportBindingSource.DataMember = "SP_Purpose_Wise_Report";
             this.sPPurposeWiseReportBindingSource.DataSource = this.mISDBDataSet9;
+            // 
+            // mISDBDataSet9
+            // 
+            this.mISDBDataSet9.DataSetName = "MISDBDataSet9";
+            this.mISDBDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sP_Purpose_Wise_ReportTableAdapter
             // 
@@ -138,7 +158,7 @@
             // 
             this.followUpDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.followUpDataGridViewTextBoxColumn.DataPropertyName = "FollowUp";
-            this.followUpDataGridViewTextBoxColumn.HeaderText = "FollowUp";
+            this.followUpDataGridViewTextBoxColumn.HeaderText = "Follow Up";
             this.followUpDataGridViewTextBoxColumn.Name = "followUpDataGridViewTextBoxColumn";
             this.followUpDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -161,14 +181,14 @@
             this.Controls.Add(this.cbxPurpose);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FollowUpWiseReportFrom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FollowUpWiseReport";
             this.Load += new System.EventHandler(this.FollowUpWiseReportFrom_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFollowUpReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurposeWiseReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,12 +201,12 @@
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvFollowUpReport;
+        private System.Windows.Forms.BindingSource sPPurposeWiseReportBindingSource;
+        private MISDBDataSet9 mISDBDataSet9;
+        private MISDBDataSet9TableAdapters.SP_Purpose_Wise_ReportTableAdapter sP_Purpose_Wise_ReportTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn purposeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn followUpDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn remarkDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource sPPurposeWiseReportBindingSource;
-        private MISDBDataSet9 mISDBDataSet9;
-        private MISDBDataSet9TableAdapters.SP_Purpose_Wise_ReportTableAdapter sP_Purpose_Wise_ReportTableAdapter;
     }
 }

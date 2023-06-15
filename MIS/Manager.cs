@@ -22,10 +22,10 @@ namespace MIS
             return q.ToList();
         }
 
-        public List<SP_Purpose_Wise_Report_Result> GetAllPurposeWiseReport(int PopId)
+        internal List<SP_Report_Result> GetAllPurposeWiseReport(int pid)
         {
             var context = new MISDBEntities();
-            var q = context.SP_Purpose_Wise_Report(PopId);
+            var q = context.SP_Report(pid);
             return q.ToList();
         }
     }

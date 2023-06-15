@@ -33,6 +33,12 @@
     <FunctionImport Name="sp_upgraddiagrams" />
     <FunctionImport Name="SP_Follow_Up_Item" ReturnType="Collection(MISDBModel.SP_Follow_Up_Item_Result)" />
     <FunctionImport Name="SP_FollowUp" ReturnType="Collection(MISDBModel.SP_FollowUp_Result)" />
+    <FunctionImport Name="SP_Purpose_Wise_Report" ReturnType="Collection(MISDBModel.SP_Purpose_Wise_Report_Result)">
+      <Parameter Name="PopId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Purpose_Wise_Follow_Report" ReturnType="Collection(MISDBModel.SP_Purpose_Wise_Follow_Report_Result)">
+      <Parameter Name="PopId" Mode="In" Type="Int32" />
+    </FunctionImport>
     <EntitySet Name="FollowUpTables" EntityType="MISDBModel.FollowUpTable" />
     <EntitySet Name="PurposeInfoes" EntityType="MISDBModel.PurposeInfo" />
     <EntitySet Name="sysdiagrams" EntityType="MISDBModel.sysdiagram" />
@@ -40,8 +46,8 @@
       <End Role="PurposeInfo" EntitySet="PurposeInfoes" />
       <End Role="FollowUpTable" EntitySet="FollowUpTables" />
     </AssociationSet>
-    <FunctionImport Name="SP_Purpose_Wise_Report" ReturnType="Collection(MISDBModel.SP_Purpose_Wise_Report_Result)">
-      <Parameter Name="PopId" Mode="In" Type="Int32" />
+    <FunctionImport Name="SP_Report" ReturnType="Collection(MISDBModel.SP_Report_Result)">
+      <Parameter Name="PID" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -61,6 +67,18 @@
     <Property Type="String" Name="Purpose" Nullable="true" MaxLength="200" />
   </ComplexType>
   <ComplexType Name="SP_FollowUp_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="FollowUp" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Purpose" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_Purpose_Wise_Report_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="FollowUp" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Purpose" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_Purpose_Wise_Follow_Report_Result">
     <Property Type="Int32" Name="Id" Nullable="false" />
     <Property Type="String" Name="FollowUp" Nullable="true" MaxLength="200" />
     <Property Type="String" Name="Purpose" Nullable="true" MaxLength="200" />
@@ -106,10 +124,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <ComplexType Name="SP_Purpose_Wise_Report_Result">
+  <ComplexType Name="SP_Report_Result">
     <Property Type="Int32" Name="Id" Nullable="false" />
-    <Property Type="String" Name="FollowUp" Nullable="true" MaxLength="200" />
     <Property Type="String" Name="Purpose" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="FollowUp" Nullable="true" MaxLength="200" />
     <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
   </ComplexType>
 </Schema>

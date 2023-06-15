@@ -44,6 +44,16 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Purpose_Wise_Follow_Report" FunctionName="MISDBModel.Store.SP_Purpose_Wise_Follow_Report">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MISDBModel.SP_Purpose_Wise_Follow_Report_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FollowUp" ColumnName="FollowUp" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="FollowUpTables">
       <EntityTypeMapping TypeName="MISDBModel.FollowUpTable">
         <MappingFragment StoreEntitySet="FollowUpTable">
@@ -73,12 +83,12 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="SP_Purpose_Wise_Report" FunctionName="MISDBModel.Store.SP_Purpose_Wise_Report">
+    <FunctionImportMapping FunctionImportName="SP_Report" FunctionName="MISDBModel.Store.SP_Report">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="MISDBModel.SP_Purpose_Wise_Report_Result">
+        <ComplexTypeMapping TypeName="MISDBModel.SP_Report_Result">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FollowUp" ColumnName="FollowUp" />
           <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="FollowUp" ColumnName="FollowUp" />
           <ScalarProperty Name="Remark" ColumnName="Remark" />
         </ComplexTypeMapping>
       </ResultMapping>
