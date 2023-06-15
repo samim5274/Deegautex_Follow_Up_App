@@ -51,5 +51,11 @@ namespace MIS
         {
             this.Close();
         }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            FillGrid();
+            cbxPurpose.Text = string.Empty;
+        }
     }
 }

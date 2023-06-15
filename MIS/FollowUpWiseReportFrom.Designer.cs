@@ -44,6 +44,7 @@
             this.followUpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remarkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnShowAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFollowUpReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurposeWiseReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet9)).BeginInit();
@@ -75,7 +76,7 @@
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(573, 50);
             this.btnShow.TabIndex = 2;
-            this.btnShow.Text = "show";
+            this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = true;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
@@ -123,7 +124,7 @@
             this.dgvFollowUpReport.RowHeadersVisible = false;
             this.dgvFollowUpReport.RowTemplate.Height = 24;
             this.dgvFollowUpReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFollowUpReport.Size = new System.Drawing.Size(907, 415);
+            this.dgvFollowUpReport.Size = new System.Drawing.Size(907, 376);
             this.dgvFollowUpReport.TabIndex = 4;
             // 
             // sPPurposeWiseReportBindingSource
@@ -175,18 +176,30 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1117, 3);
+            this.label4.Location = new System.Drawing.Point(1116, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 45);
             this.label4.TabIndex = 8;
             this.label4.Text = "x";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // btnShowAll
+            // 
+            this.btnShowAll.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAll.Location = new System.Drawing.Point(289, 623);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(573, 50);
+            this.btnShowAll.TabIndex = 9;
+            this.btnShowAll.Text = "Show All";
+            this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
+            // 
             // FollowUpWiseReportFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 692);
+            this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvFollowUpReport);
             this.Controls.Add(this.label2);
@@ -223,5 +236,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn followUpDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn remarkDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnShowAll;
     }
 }
