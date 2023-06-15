@@ -16,7 +16,7 @@ namespace MIS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FollowUpWiseReportFrom());
+            Application.Run(new MotherForm());
         }
     }
 }

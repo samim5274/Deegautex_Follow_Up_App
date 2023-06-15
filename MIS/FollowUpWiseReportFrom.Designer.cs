@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxPurpose = new System.Windows.Forms.ComboBox();
             this.btnShow = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@
             this.purposeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.followUpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remarkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFollowUpReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurposeWiseReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet9)).BeginInit();
@@ -52,7 +53,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(295, 9);
+            this.label1.Location = new System.Drawing.Point(296, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(566, 45);
             this.label1.TabIndex = 0;
@@ -62,7 +63,7 @@
             // 
             this.cbxPurpose.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPurpose.FormattingEnabled = true;
-            this.cbxPurpose.Location = new System.Drawing.Point(505, 81);
+            this.cbxPurpose.Location = new System.Drawing.Point(506, 112);
             this.cbxPurpose.Name = "cbxPurpose";
             this.cbxPurpose.Size = new System.Drawing.Size(281, 34);
             this.cbxPurpose.TabIndex = 1;
@@ -70,7 +71,7 @@
             // btnShow
             // 
             this.btnShow.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShow.Location = new System.Drawing.Point(288, 132);
+            this.btnShow.Location = new System.Drawing.Point(289, 163);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(573, 50);
             this.btnShow.TabIndex = 2;
@@ -82,7 +83,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(368, 84);
+            this.label2.Location = new System.Drawing.Point(369, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 27);
             this.label2.TabIndex = 3;
@@ -93,14 +94,14 @@
             this.dgvFollowUpReport.AllowUserToAddRows = false;
             this.dgvFollowUpReport.AllowUserToDeleteRows = false;
             this.dgvFollowUpReport.AutoGenerateColumns = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFollowUpReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFollowUpReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFollowUpReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFollowUpReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -108,15 +109,15 @@
             this.followUpDataGridViewTextBoxColumn,
             this.remarkDataGridViewTextBoxColumn});
             this.dgvFollowUpReport.DataSource = this.sPPurposeWiseReportBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFollowUpReport.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvFollowUpReport.Location = new System.Drawing.Point(125, 201);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFollowUpReport.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvFollowUpReport.Location = new System.Drawing.Point(126, 232);
             this.dgvFollowUpReport.Name = "dgvFollowUpReport";
             this.dgvFollowUpReport.ReadOnly = true;
             this.dgvFollowUpReport.RowHeadersVisible = false;
@@ -170,17 +171,30 @@
             this.remarkDataGridViewTextBoxColumn.Name = "remarkDataGridViewTextBoxColumn";
             this.remarkDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Nirmala UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1117, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 45);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "x";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // FollowUpWiseReportFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 692);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvFollowUpReport);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.cbxPurpose);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FollowUpWiseReportFrom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -208,5 +222,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn purposeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn followUpDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn remarkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label4;
     }
 }

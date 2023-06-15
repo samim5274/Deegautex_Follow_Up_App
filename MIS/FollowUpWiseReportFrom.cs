@@ -25,21 +25,11 @@ namespace MIS
 
         private void FillPurpose()
         {
-            var obj = new Manager();
-
-            var pp = new PurposeInfo { PId = 0, Purpose = "All Purpose" };
-
-            var plist = new List<PurposeInfo>();
-            plist.Add(pp);
-            
-
+            var obj = new Manager();  
             var list = obj.FillAllPurpose();
-
-            plist.AddRange(plist);
-
             cbxPurpose.DisplayMember = "Purpose";
             cbxPurpose.ValueMember = "PId";
-            cbxPurpose.DataSource = plist;
+            cbxPurpose.DataSource = list;
         }
 
         private void FillGrid()
@@ -55,6 +45,11 @@ namespace MIS
             var mngr = new Manager();
             var list = mngr.GetAllPurposeWiseReport(pid);
             dgvFollowUpReport.DataSource = list;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -32,10 +32,10 @@
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.followUpIteamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.followUpReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.followUpReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,15 +67,22 @@
             this.followUpIteamToolStripMenuItem,
             this.followUpReportToolStripMenuItem});
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(113, 26);
-            this.userToolStripMenuItem.Text = "Information";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
+            this.userToolStripMenuItem.Text = "Follow Up";
             // 
             // followUpIteamToolStripMenuItem
             // 
             this.followUpIteamToolStripMenuItem.Name = "followUpIteamToolStripMenuItem";
-            this.followUpIteamToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.followUpIteamToolStripMenuItem.Text = "Follow Up Iteam";
+            this.followUpIteamToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.followUpIteamToolStripMenuItem.Text = "Add Iteam";
             this.followUpIteamToolStripMenuItem.Click += new System.EventHandler(this.followUpIteamToolStripMenuItem_Click);
+            // 
+            // followUpReportToolStripMenuItem
+            // 
+            this.followUpReportToolStripMenuItem.Name = "followUpReportToolStripMenuItem";
+            this.followUpReportToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.followUpReportToolStripMenuItem.Text = "Report";
+            this.followUpReportToolStripMenuItem.Click += new System.EventHandler(this.followUpReportToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -94,13 +101,6 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
             this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // followUpReportToolStripMenuItem
-            // 
-            this.followUpReportToolStripMenuItem.Name = "followUpReportToolStripMenuItem";
-            this.followUpReportToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.followUpReportToolStripMenuItem.Text = "Follow Up Report";
-            this.followUpReportToolStripMenuItem.Click += new System.EventHandler(this.followUpReportToolStripMenuItem_Click);
             // 
             // MotherForm
             // 

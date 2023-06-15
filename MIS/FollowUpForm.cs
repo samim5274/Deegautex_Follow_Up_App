@@ -26,7 +26,7 @@ namespace MIS
         {
             FillGrid();
             FilPurpose();
-            ClearAll();            
+            ClearAll();
         }
         
 
@@ -82,6 +82,9 @@ namespace MIS
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearAll();
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Visible = true;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -172,6 +175,6 @@ namespace MIS
             btnDelete.Enabled = false;
             btnEdit.Enabled = false;
             btnSave.Visible = true;
-        }
+        }    
     }
 }
