@@ -13,8 +13,6 @@ F:\IT\Application\Web Site\MIS\MIS\obj\Debug\MIS.exe
 F:\IT\Application\Web Site\MIS\MIS\obj\Debug\MIS.pdb
 F:\IT\Application\Web Site\MIS\MIS\obj\Debug\MIS.csprojResolveAssemblyReference.cache
 F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\bin\Debug\MIS.exe.config
-F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.exe
-F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.pdb
 F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\bin\Debug\MIS.exe
 F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\bin\Debug\MIS.pdb
 F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\bin\Debug\EntityFramework.dll
@@ -27,3 +25,5 @@ F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.FollowU
 F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.MotherForm.resources
 F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.Properties.Resources.resources
 F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.csproj.GenerateResource.Cache
+F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.exe
+F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.pdb

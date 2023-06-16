@@ -32,5 +32,12 @@ namespace MIS
             obj.MdiParent = this;
             obj.Show();
         }
+
+        private void reportCheckYesNoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var obj = new ReportCheckForm();
+            obj.MdiParent = this;
+            obj.Show();
+        }
     }
 }

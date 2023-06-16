@@ -36,6 +36,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportCheckYesNoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,8 @@
             // 
             this.userToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.followUpIteamToolStripMenuItem,
-            this.followUpReportToolStripMenuItem});
+            this.followUpReportToolStripMenuItem,
+            this.reportCheckYesNoToolStripMenuItem});
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
             this.userToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
             this.userToolStripMenuItem.Text = "Follow Up";
@@ -73,14 +75,14 @@
             // followUpIteamToolStripMenuItem
             // 
             this.followUpIteamToolStripMenuItem.Name = "followUpIteamToolStripMenuItem";
-            this.followUpIteamToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.followUpIteamToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.followUpIteamToolStripMenuItem.Text = "Add Iteam";
             this.followUpIteamToolStripMenuItem.Click += new System.EventHandler(this.followUpIteamToolStripMenuItem_Click);
             // 
             // followUpReportToolStripMenuItem
             // 
             this.followUpReportToolStripMenuItem.Name = "followUpReportToolStripMenuItem";
-            this.followUpReportToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.followUpReportToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.followUpReportToolStripMenuItem.Text = "Report";
             this.followUpReportToolStripMenuItem.Click += new System.EventHandler(this.followUpReportToolStripMenuItem_Click);
             // 
@@ -101,6 +103,13 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
             this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // reportCheckYesNoToolStripMenuItem
+            // 
+            this.reportCheckYesNoToolStripMenuItem.Name = "reportCheckYesNoToolStripMenuItem";
+            this.reportCheckYesNoToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.reportCheckYesNoToolStripMenuItem.Text = "Report Check";
+            this.reportCheckYesNoToolStripMenuItem.Click += new System.EventHandler(this.reportCheckYesNoToolStripMenuItem_Click);
             // 
             // MotherForm
             // 
@@ -130,6 +139,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem followUpIteamToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem followUpReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportCheckYesNoToolStripMenuItem;
     }
 }
 
