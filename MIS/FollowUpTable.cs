@@ -12,10 +12,11 @@
 namespace MIS
 {
 
-using System;
+    using System;
     using System.Collections.Generic;
-    
-public partial class FollowUpTable
+    using System.Data;
+
+    public partial class FollowUpTable
 {
 
     public int Id { get; set; }
@@ -30,6 +31,10 @@ public partial class FollowUpTable
 
     public virtual PurposeInfo PurposeInfo { get; set; }
 
-}
+        internal DataRow NewRow()
+        {
+            throw new NotImplementedException();
+        }
+    }
 
 }

@@ -28,5 +28,12 @@ namespace MIS
             var q = context.SP_Report(pid);
             return q.ToList();
         }
+
+        internal object FillItem()
+        {
+            var obj = new MISDBEntities();
+            var q = from i in obj.FollowUpTables select i;
+            return q.ToList();
+        }
     }
 }

@@ -52,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -106,6 +107,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MISDBDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MISDBDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet10.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MISDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -157,6 +163,12 @@
     <Compile Include="PurposeInfo.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
+    <Compile Include="ReportCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportCheckForm.Designer.cs">
+      <DependentUpon>ReportCheckForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SP_FollowUp_Result.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
@@ -199,6 +211,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportCheckForm.resx">
+      <DependentUpon>ReportCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="MIS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MIS.Designer.cs</LastGenOutput>
@@ -227,6 +242,17 @@
     </None>
     <None Include="MISDBDataSet1.xss">
       <DependentUpon>MISDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet10.xsc">
+      <DependentUpon>MISDBDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet10.xss">
+      <DependentUpon>MISDBDataSet10.xsd</DependentUpon>
     </None>
     <None Include="MISDBDataSet2.xsc">
       <DependentUpon>MISDBDataSet2.xsd</DependentUpon>

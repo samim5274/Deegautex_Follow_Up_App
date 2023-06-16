@@ -16,5 +16,28 @@ namespace MIS
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ReportCheckForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'mISDBDataSet8.SP_FollowUp' table. You can move, or remove it, as needed.
+            this.sP_FollowUpTableAdapter.Fill(this.mISDBDataSet8.SP_FollowUp);
+            FillItem();
+            this.dtpToday.Value = DateTime.Now;
+        }
+
+        private void FillItem()
+        {
+            var obj = new Manager();
+            var list = obj.FillItem();  
+            cbxItem.DisplayMember = "FollowUp";
+            cbxItem.ValueMember = "Id";
+            cbxItem.DataSource = list;
+        }
+    
     }
 }

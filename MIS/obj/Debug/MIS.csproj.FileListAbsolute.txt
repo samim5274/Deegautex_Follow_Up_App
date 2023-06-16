@@ -27,3 +27,4 @@ F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.Propert
 F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.csproj.GenerateResource.Cache
 F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.exe
 F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.pdb
+F:\IT\Application\Web Site\MIS\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.ReportCheckForm.resources
