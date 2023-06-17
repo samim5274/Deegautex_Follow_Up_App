@@ -24,10 +24,9 @@ namespace MIS
 
         private void ReportCheckForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'mISDBDataSet8.SP_FollowUp' table. You can move, or remove it, as needed.
-            this.sP_FollowUpTableAdapter.Fill(this.mISDBDataSet8.SP_FollowUp);
             FillItem();
             this.dtpToday.Value = DateTime.Now;
+            
         }
 
         private void FillItem()
@@ -38,6 +37,13 @@ namespace MIS
             cbxItem.ValueMember = "Id";
             cbxItem.DataSource = list;
         }
-    
+
+        private void cbxItem_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            var db = new MISDBEntities();
+            var tb = new FollowUpTable();
+            textBox1.Text = cbxItem.GetItemText(cbxItem.SelectedItem);
+            textBox2.Text = cbxItem.GetItemText(cbxItem.SelectedValue);
+        }
     }
 }
