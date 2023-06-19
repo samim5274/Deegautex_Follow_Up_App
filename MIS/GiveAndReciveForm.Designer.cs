@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +45,6 @@
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txtMoney = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -61,6 +60,7 @@
             this.giveAndReciveDeailTableTableAdapter = new MIS.MISDBDataSet11TableAdapters.GiveAndReciveDeailTableTableAdapter();
             this.lblTime2 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGivenAndRecive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giveAndReciveDeailTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet11)).BeginInit();
@@ -70,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1303, 9);
+            this.label1.Location = new System.Drawing.Point(1304, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 29);
             this.label1.TabIndex = 0;
@@ -121,7 +121,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(47, 340);
+            this.label7.Location = new System.Drawing.Point(47, 437);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 24);
             this.label7.TabIndex = 6;
@@ -131,7 +131,7 @@
             // 
             this.chkTaking.AutoSize = true;
             this.chkTaking.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkTaking.Location = new System.Drawing.Point(355, 486);
+            this.chkTaking.Location = new System.Drawing.Point(347, 341);
             this.chkTaking.Name = "chkTaking";
             this.chkTaking.Size = new System.Drawing.Size(110, 28);
             this.chkTaking.TabIndex = 7;
@@ -143,7 +143,7 @@
             // 
             this.chkGivenMoney.AutoSize = true;
             this.chkGivenMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkGivenMoney.Location = new System.Drawing.Point(178, 486);
+            this.chkGivenMoney.Location = new System.Drawing.Point(233, 341);
             this.chkGivenMoney.Name = "chkGivenMoney";
             this.chkGivenMoney.Size = new System.Drawing.Size(79, 28);
             this.chkGivenMoney.TabIndex = 8;
@@ -170,7 +170,7 @@
             // txtResion
             // 
             this.txtResion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResion.Location = new System.Drawing.Point(233, 338);
+            this.txtResion.Location = new System.Drawing.Point(233, 435);
             this.txtResion.Multiline = true;
             this.txtResion.Name = "txtResion";
             this.txtResion.Size = new System.Drawing.Size(224, 127);
@@ -189,18 +189,19 @@
             // dtpDate
             // 
             this.dtpDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDate.Location = new System.Drawing.Point(245, 207);
+            this.dtpDate.Enabled = false;
+            this.dtpDate.Location = new System.Drawing.Point(233, 207);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpDate.Size = new System.Drawing.Size(224, 22);
             this.dtpDate.TabIndex = 13;
             // 
             // txtMoney
             // 
             this.txtMoney.Enabled = false;
             this.txtMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMoney.Location = new System.Drawing.Point(93, 534);
+            this.txtMoney.Location = new System.Drawing.Point(233, 384);
             this.txtMoney.Name = "txtMoney";
-            this.txtMoney.Size = new System.Drawing.Size(458, 28);
+            this.txtMoney.Size = new System.Drawing.Size(224, 28);
             this.txtMoney.TabIndex = 15;
             this.txtMoney.TextChanged += new System.EventHandler(this.txtMoney_TextChanged);
             // 
@@ -216,22 +217,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(494, 286);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 33);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
             this.button3.Enabled = false;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(494, 336);
+            this.button3.Location = new System.Drawing.Point(494, 293);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 33);
             this.button3.TabIndex = 18;
@@ -264,14 +254,14 @@
             this.dgvGivenAndRecive.AllowUserToAddRows = false;
             this.dgvGivenAndRecive.AllowUserToDeleteRows = false;
             this.dgvGivenAndRecive.AutoGenerateColumns = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGivenAndRecive.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGivenAndRecive.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvGivenAndRecive.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGivenAndRecive.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.giverNameDataGridViewTextBoxColumn,
@@ -334,7 +324,7 @@
             // lblMoneyType
             // 
             this.lblMoneyType.AutoSize = true;
-            this.lblMoneyType.Location = new System.Drawing.Point(306, 493);
+            this.lblMoneyType.Location = new System.Drawing.Point(463, 347);
             this.lblMoneyType.Name = "lblMoneyType";
             this.lblMoneyType.Size = new System.Drawing.Size(24, 17);
             this.lblMoneyType.TabIndex = 22;
@@ -359,7 +349,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(494, 381);
+            this.button5.Location = new System.Drawing.Point(494, 338);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(90, 33);
             this.button5.TabIndex = 24;
@@ -367,11 +357,22 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(47, 343);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(164, 24);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Me Taking or Give";
+            // 
             // GivenAndReciveForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1345, 591);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.lblTime2);
             this.Controls.Add(this.lblMoneyType);
@@ -379,7 +380,6 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtMoney);
             this.Controls.Add(this.dtpDate);
@@ -425,7 +425,6 @@
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.TextBox txtMoney;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtSearch;
@@ -441,5 +440,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn resonDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblTime2;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label5;
     }
 }

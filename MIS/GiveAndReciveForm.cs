@@ -55,8 +55,36 @@ namespace MIS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SaveInfo();
-            FillGrid();
+            if(button1.Text=="Save")
+            {
+                SaveInfo();
+                FillGrid();
+            }
+            else if (button1.Text== "Edit")
+            {
+                EditInfo();
+                FillGrid();
+            }            
+        }
+
+        private void EditInfo()
+        {
+            var db = new MISDBEntities();
+            var tb = new GiveAndReciveDeailTable();
+            var selector = db.GiveAndReciveDeailTables.Where(a => a.Id.ToString() == txtSearch.Text).FirstOrDefault();
+
+            selector.Date = Convert.ToDateTime(dtpDate.Value);
+            selector.GiverName = txtGiverName.Text.Trim();
+            selector.ReciverName = txtReciverName.Text.Trim();
+            selector.Time = lblTime.Text.Trim();
+            selector.Reson = txtResion.Text.Trim();
+            selector.MoneyType = Convert.ToInt32(lblMoneyType.Text.Trim());
+            selector.Money = Convert.ToInt32(txtMoney.Text.Trim());
+
+            //db.GiveAndReciveDeailTables.Add(tb);
+            db.SaveChanges();
+            MessageBox.Show(@"Data edit done.", "Edit Info", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            ClearText();
         }
 
         private void SaveInfo()
@@ -149,7 +177,23 @@ namespace MIS
             lblTime2.Text = selector.Time;
             lblTime2.Visible = true;
             txtResion.Text = selector.Reson;
-            txtMoney.Text = txtMoney.Text.Trim();
+            txtMoney.Text = selector.Money.ToString();
+            lblMoneyType.Text = selector.MoneyType.ToString();
+            if (lblMoneyType.Text=="0")
+            {
+                chkGivenMoney.Checked = true;
+            }
+            else if (lblMoneyType.Text=="1")
+            {
+                chkTaking.Checked = true;
+            }
+            else
+            {
+                chkTaking.Checked = false;
+                chkGivenMoney.Checked = false;
+            }
+            button1.Enabled = true;
+            button1.Text = "Edit";
         }
 
         private void button5_Click(object sender, EventArgs e)
