@@ -170,6 +170,7 @@ namespace MIS
 
             db.FollowUpTables.Remove(selector);
             db.SaveChanges();
+
             FillGrid();
             ClearAll();
             btnDelete.Enabled = false;
