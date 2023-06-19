@@ -6,8 +6,9 @@
     <edmx:Diagrams>
       <Diagram DiagramId="21dc5da23e02437ab9deace1575160ff" Name="Diagram1">
         <EntityTypeShape EntityType="MISDBModel.FollowUpTable" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="MISDBModel.GiveAndReciveDeailTable" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="MISDBModel.PurposeInfo" Width="1.5" PointX="0.75" PointY="1.125" />
-        <EntityTypeShape EntityType="MISDBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MISDBModel.sysdiagram" Width="1.5" PointX="2.75" PointY="3.75" />
         <AssociationConnector Association="MISDBModel.FK_FollowUpTable_PurposeInfo" />
       </Diagram>
     </edmx:Diagrams>

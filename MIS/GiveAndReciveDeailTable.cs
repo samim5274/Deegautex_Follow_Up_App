@@ -15,20 +15,22 @@ namespace MIS
 using System;
     using System.Collections.Generic;
     
-public partial class FollowUpTable
+public partial class GiveAndReciveDeailTable
 {
 
     public int Id { get; set; }
 
-    public string FollowUp { get; set; }
+    public Nullable<System.DateTime> Date { get; set; }
 
-    public string Remark { get; set; }
+    public string GiverName { get; set; }
 
-    public Nullable<int> PId { get; set; }
+    public string ReciverName { get; set; }
 
+    public string Time { get; set; }
 
+    public string Reson { get; set; }
 
-    public virtual PurposeInfo PurposeInfo { get; set; }
+    public Nullable<int> Money { get; set; }
 
 }
 

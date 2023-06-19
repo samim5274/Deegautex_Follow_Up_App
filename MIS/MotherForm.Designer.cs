@@ -33,10 +33,12 @@
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.followUpIteamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.followUpReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportCheckYesNoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportCheckYesNoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.giverAndReciveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +49,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.userToolStripMenuItem,
+            this.transectionToolStripMenuItem,
             this.aboutToolStripMenuItem,
             this.settingToolStripMenuItem,
             this.exitToolStripMenuItem});
@@ -75,16 +78,23 @@
             // followUpIteamToolStripMenuItem
             // 
             this.followUpIteamToolStripMenuItem.Name = "followUpIteamToolStripMenuItem";
-            this.followUpIteamToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.followUpIteamToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
             this.followUpIteamToolStripMenuItem.Text = "Add Iteam";
             this.followUpIteamToolStripMenuItem.Click += new System.EventHandler(this.followUpIteamToolStripMenuItem_Click);
             // 
             // followUpReportToolStripMenuItem
             // 
             this.followUpReportToolStripMenuItem.Name = "followUpReportToolStripMenuItem";
-            this.followUpReportToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.followUpReportToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
             this.followUpReportToolStripMenuItem.Text = "Report";
             this.followUpReportToolStripMenuItem.Click += new System.EventHandler(this.followUpReportToolStripMenuItem_Click);
+            // 
+            // reportCheckYesNoToolStripMenuItem
+            // 
+            this.reportCheckYesNoToolStripMenuItem.Name = "reportCheckYesNoToolStripMenuItem";
+            this.reportCheckYesNoToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.reportCheckYesNoToolStripMenuItem.Text = "Report Check";
+            this.reportCheckYesNoToolStripMenuItem.Click += new System.EventHandler(this.reportCheckYesNoToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -104,12 +114,20 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
-            // reportCheckYesNoToolStripMenuItem
+            // transectionToolStripMenuItem
             // 
-            this.reportCheckYesNoToolStripMenuItem.Name = "reportCheckYesNoToolStripMenuItem";
-            this.reportCheckYesNoToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
-            this.reportCheckYesNoToolStripMenuItem.Text = "Report Check";
-            this.reportCheckYesNoToolStripMenuItem.Click += new System.EventHandler(this.reportCheckYesNoToolStripMenuItem_Click);
+            this.transectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.giverAndReciveToolStripMenuItem});
+            this.transectionToolStripMenuItem.Name = "transectionToolStripMenuItem";
+            this.transectionToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.transectionToolStripMenuItem.Text = "Transection";
+            // 
+            // giverAndReciveToolStripMenuItem
+            // 
+            this.giverAndReciveToolStripMenuItem.Name = "giverAndReciveToolStripMenuItem";
+            this.giverAndReciveToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.giverAndReciveToolStripMenuItem.Text = "Giver and Recive";
+            this.giverAndReciveToolStripMenuItem.Click += new System.EventHandler(this.giverAndReciveToolStripMenuItem_Click);
             // 
             // MotherForm
             // 
@@ -140,6 +158,8 @@
         private System.Windows.Forms.ToolStripMenuItem followUpIteamToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem followUpReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportCheckYesNoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transectionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem giverAndReciveToolStripMenuItem;
     }
 }
 

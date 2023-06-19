@@ -14,6 +14,18 @@
           <Property Name="Remark" Type="varchar" MaxLength="500" />
           <Property Name="PId" Type="int" />
         </EntityType>
+        <EntityType Name="GiveAndReciveDeailTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="GiverName" Type="varchar" MaxLength="100" />
+          <Property Name="ReciverName" Type="varchar" MaxLength="100" />
+          <Property Name="Time" Type="varchar" MaxLength="50" />
+          <Property Name="Reson" Type="varchar" MaxLength="150" />
+          <Property Name="Money" Type="int" />
+        </EntityType>
         <EntityType Name="PurposeInfo">
           <Key>
             <PropertyRef Name="PId" />
@@ -84,6 +96,7 @@
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="MISDBModelStoreContainer">
           <EntitySet Name="FollowUpTable" EntityType="Self.FollowUpTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GiveAndReciveDeailTable" EntityType="Self.GiveAndReciveDeailTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PurposeInfo" EntityType="Self.PurposeInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_FollowUpTable_PurposeInfo" Association="Self.FK_FollowUpTable_PurposeInfo">
@@ -138,6 +151,7 @@
           <Parameter Name="PID" Mode="In" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="FollowUpTables" EntityType="MISDBModel.FollowUpTable" />
+          <EntitySet Name="GiveAndReciveDeailTables" EntityType="MISDBModel.GiveAndReciveDeailTable" />
           <EntitySet Name="PurposeInfoes" EntityType="MISDBModel.PurposeInfo" />
           <EntitySet Name="sysdiagrams" EntityType="MISDBModel.sysdiagram" />
           <AssociationSet Name="FK_FollowUpTable_PurposeInfo" Association="MISDBModel.FK_FollowUpTable_PurposeInfo">
@@ -194,6 +208,18 @@
           <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="PId" Type="Int32" />
           <NavigationProperty Name="PurposeInfo" Relationship="MISDBModel.FK_FollowUpTable_PurposeInfo" FromRole="FollowUpTable" ToRole="PurposeInfo" />
+        </EntityType>
+        <EntityType Name="GiveAndReciveDeailTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="GiverName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ReciverName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Reson" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Money" Type="Int32" />
         </EntityType>
         <EntityType Name="PurposeInfo">
           <Key>
@@ -300,6 +326,19 @@
                 <ScalarProperty Name="PId" ColumnName="PId" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
                 <ScalarProperty Name="FollowUp" ColumnName="FollowUp" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GiveAndReciveDeailTables">
+            <EntityTypeMapping TypeName="MISDBModel.GiveAndReciveDeailTable">
+              <MappingFragment StoreEntitySet="GiveAndReciveDeailTable">
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="Reson" ColumnName="Reson" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="ReciverName" ColumnName="ReciverName" />
+                <ScalarProperty Name="GiverName" ColumnName="GiverName" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -81,6 +81,12 @@
     <Compile Include="FollowUpWiseReportFrom.Designer.cs">
       <DependentUpon>FollowUpWiseReportFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiveAndReciveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiveAndReciveForm.Designer.cs">
+      <DependentUpon>GiveAndReciveForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="MIS.Context.cs">
       <AutoGen>True</AutoGen>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FollowUpWiseReportFrom.resx">
       <DependentUpon>FollowUpWiseReportFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiveAndReciveForm.resx">
+      <DependentUpon>GiveAndReciveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MotherForm.resx">
       <DependentUpon>MotherForm.cs</DependentUpon>

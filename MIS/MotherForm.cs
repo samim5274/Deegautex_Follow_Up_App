@@ -39,5 +39,12 @@ namespace MIS
             obj.MdiParent = this;
             obj.Show();
         }
+
+        private void giverAndReciveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var obj = new GiveAndReciveForm();
+            obj.MdiParent = this;
+            obj.Show();
+        }
     }
 }
