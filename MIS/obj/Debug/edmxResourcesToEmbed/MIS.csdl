@@ -43,6 +43,7 @@
       <Parameter Name="PID" Mode="In" Type="Int32" />
     </FunctionImport>
     <EntitySet Name="FollowUpTables" EntityType="MISDBModel.FollowUpTable" />
+    <EntitySet Name="GiveAndReciveDeailTables" EntityType="MISDBModel.GiveAndReciveDeailTable" />
     <EntitySet Name="PurposeInfoes" EntityType="MISDBModel.PurposeInfo" />
     <EntitySet Name="sysdiagrams" EntityType="MISDBModel.sysdiagram" />
     <AssociationSet Name="FK_FollowUpTable_PurposeInfo" Association="MISDBModel.FK_FollowUpTable_PurposeInfo">
@@ -99,6 +100,19 @@
     <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="PId" Type="Int32" />
     <NavigationProperty Name="PurposeInfo" Relationship="MISDBModel.FK_FollowUpTable_PurposeInfo" FromRole="FollowUpTable" ToRole="PurposeInfo" />
+  </EntityType>
+  <EntityType Name="GiveAndReciveDeailTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="GiverName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReciverName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reson" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="MoneyType" Type="Int32" />
+    <Property Name="Money" Type="Int32" />
   </EntityType>
   <EntityType Name="PurposeInfo">
     <Key>

@@ -35,5 +35,12 @@ namespace MIS
             var q = from i in obj.FollowUpTables select i;
             return q.ToList();
         }
+
+        internal object GetAllMoneyInfo()
+        {
+            var obj = new MISDBEntities();
+            var q = from m in obj.GiveAndReciveDeailTables select m;
+            return q.ToList();
+        }
     }
 }

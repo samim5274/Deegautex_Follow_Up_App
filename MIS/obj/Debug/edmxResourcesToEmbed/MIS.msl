@@ -74,6 +74,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="GiveAndReciveDeailTables">
+      <EntityTypeMapping TypeName="MISDBModel.GiveAndReciveDeailTable">
+        <MappingFragment StoreEntitySet="GiveAndReciveDeailTable">
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="MoneyType" ColumnName="MoneyType" />
+          <ScalarProperty Name="Reson" ColumnName="Reson" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="ReciverName" ColumnName="ReciverName" />
+          <ScalarProperty Name="GiverName" ColumnName="GiverName" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="PurposeInfoes">
       <EntityTypeMapping TypeName="MISDBModel.PurposeInfo">
         <MappingFragment StoreEntitySet="PurposeInfo">

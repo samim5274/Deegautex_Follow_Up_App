@@ -30,6 +30,8 @@ public partial class GiveAndReciveDeailTable
 
     public string Reson { get; set; }
 
+    public Nullable<int> MoneyType { get; set; }
+
     public Nullable<int> Money { get; set; }
 
 }

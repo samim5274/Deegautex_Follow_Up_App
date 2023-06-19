@@ -42,7 +42,7 @@ namespace MIS
 
         private void giverAndReciveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var obj = new GiveAndReciveForm();
+            var obj = new GivenAndReciveForm();
             obj.MdiParent = this;
             obj.Show();
         }

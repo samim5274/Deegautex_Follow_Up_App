@@ -9,6 +9,19 @@
     <Property Name="Remark" Type="varchar" MaxLength="500" />
     <Property Name="PId" Type="int" />
   </EntityType>
+  <EntityType Name="GiveAndReciveDeailTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="date" />
+    <Property Name="GiverName" Type="varchar" MaxLength="100" />
+    <Property Name="ReciverName" Type="varchar" MaxLength="100" />
+    <Property Name="Time" Type="varchar" MaxLength="50" />
+    <Property Name="Reson" Type="varchar" MaxLength="150" />
+    <Property Name="MoneyType" Type="int" />
+    <Property Name="Money" Type="int" />
+  </EntityType>
   <EntityType Name="PurposeInfo">
     <Key>
       <PropertyRef Name="PId" />
@@ -79,6 +92,7 @@
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="MISDBModelStoreContainer">
     <EntitySet Name="FollowUpTable" EntityType="Self.FollowUpTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GiveAndReciveDeailTable" EntityType="Self.GiveAndReciveDeailTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PurposeInfo" EntityType="Self.PurposeInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_FollowUpTable_PurposeInfo" Association="Self.FK_FollowUpTable_PurposeInfo">

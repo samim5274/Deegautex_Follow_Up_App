@@ -81,6 +81,9 @@
     <Compile Include="FollowUpWiseReportFrom.Designer.cs">
       <DependentUpon>FollowUpWiseReportFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiveAndReciveDeailTable.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
     <Compile Include="GiveAndReciveForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +120,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MISDBDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet11.xsd</DependentUpon>
     </Compile>
     <Compile Include="MISDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -262,6 +270,17 @@
     </None>
     <None Include="MISDBDataSet10.xss">
       <DependentUpon>MISDBDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet11.xsc">
+      <DependentUpon>MISDBDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet11.xss">
+      <DependentUpon>MISDBDataSet11.xsd</DependentUpon>
     </None>
     <None Include="MISDBDataSet2.xsc">
       <DependentUpon>MISDBDataSet2.xsd</DependentUpon>
