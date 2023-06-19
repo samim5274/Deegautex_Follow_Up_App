@@ -227,6 +227,23 @@ public partial class MISDBEntities : DbContext
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Report_Result>("SP_Report", pIDParameter);
     }
 
+
+    public virtual ObjectResult<SP_DAY_WISE_MONEY_REPORT_Result> SP_DAY_WISE_MONEY_REPORT(Nullable<System.DateTime> sDate, Nullable<System.DateTime> eDate)
+    {
+
+        var sDateParameter = sDate.HasValue ?
+            new ObjectParameter("SDate", sDate) :
+            new ObjectParameter("SDate", typeof(System.DateTime));
+
+
+        var eDateParameter = eDate.HasValue ?
+            new ObjectParameter("EDate", eDate) :
+            new ObjectParameter("EDate", typeof(System.DateTime));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_DAY_WISE_MONEY_REPORT_Result>("SP_DAY_WISE_MONEY_REPORT", sDateParameter, eDateParameter);
+    }
+
 }
 
 }

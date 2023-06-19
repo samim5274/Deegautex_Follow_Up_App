@@ -34,11 +34,12 @@
             this.followUpIteamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.followUpReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportCheckYesNoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.giverAndReciveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.giverAndReciveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dayWiseTransectionReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,6 +97,22 @@
             this.reportCheckYesNoToolStripMenuItem.Text = "Report Check";
             this.reportCheckYesNoToolStripMenuItem.Click += new System.EventHandler(this.reportCheckYesNoToolStripMenuItem_Click);
             // 
+            // transectionToolStripMenuItem
+            // 
+            this.transectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.giverAndReciveToolStripMenuItem,
+            this.dayWiseTransectionReportToolStripMenuItem});
+            this.transectionToolStripMenuItem.Name = "transectionToolStripMenuItem";
+            this.transectionToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.transectionToolStripMenuItem.Text = "Transection";
+            // 
+            // giverAndReciveToolStripMenuItem
+            // 
+            this.giverAndReciveToolStripMenuItem.Name = "giverAndReciveToolStripMenuItem";
+            this.giverAndReciveToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.giverAndReciveToolStripMenuItem.Text = "Giver and Recive";
+            this.giverAndReciveToolStripMenuItem.Click += new System.EventHandler(this.giverAndReciveToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -114,20 +131,12 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
-            // transectionToolStripMenuItem
+            // dayWiseTransectionReportToolStripMenuItem
             // 
-            this.transectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.giverAndReciveToolStripMenuItem});
-            this.transectionToolStripMenuItem.Name = "transectionToolStripMenuItem";
-            this.transectionToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
-            this.transectionToolStripMenuItem.Text = "Transection";
-            // 
-            // giverAndReciveToolStripMenuItem
-            // 
-            this.giverAndReciveToolStripMenuItem.Name = "giverAndReciveToolStripMenuItem";
-            this.giverAndReciveToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
-            this.giverAndReciveToolStripMenuItem.Text = "Giver and Recive";
-            this.giverAndReciveToolStripMenuItem.Click += new System.EventHandler(this.giverAndReciveToolStripMenuItem_Click);
+            this.dayWiseTransectionReportToolStripMenuItem.Name = "dayWiseTransectionReportToolStripMenuItem";
+            this.dayWiseTransectionReportToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
+            this.dayWiseTransectionReportToolStripMenuItem.Text = "Day wise transection report";
+            this.dayWiseTransectionReportToolStripMenuItem.Click += new System.EventHandler(this.dayWiseTransectionReportToolStripMenuItem_Click);
             // 
             // MotherForm
             // 
@@ -160,6 +169,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportCheckYesNoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giverAndReciveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dayWiseTransectionReportToolStripMenuItem;
     }
 }
 

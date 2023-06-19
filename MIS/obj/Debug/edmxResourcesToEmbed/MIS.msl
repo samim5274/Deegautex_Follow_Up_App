@@ -107,5 +107,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_DAY_WISE_MONEY_REPORT" FunctionName="MISDBModel.Store.SP_DAY_WISE_MONEY_REPORT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MISDBModel.SP_DAY_WISE_MONEY_REPORT_Result">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="GiverName" ColumnName="GiverName" />
+          <ScalarProperty Name="ReciverName" ColumnName="ReciverName" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Reson" ColumnName="Reson" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

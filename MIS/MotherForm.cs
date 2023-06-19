@@ -46,5 +46,12 @@ namespace MIS
             obj.MdiParent = this;
             obj.Show();
         }
+
+        private void dayWiseTransectionReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var obj = new DayWiseMoneyReportForm();
+            obj.MdiParent = this;
+            obj.Show();
+        }
     }
 }

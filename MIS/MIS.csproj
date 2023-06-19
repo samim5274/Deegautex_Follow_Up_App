@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DayWiseMoneyReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayWiseMoneyReportForm.Designer.cs">
+      <DependentUpon>DayWiseMoneyReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FollowUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MISDBDataSet11.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MISDBDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet12.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MISDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -183,6 +194,9 @@
     <Compile Include="ReportCheckForm.Designer.cs">
       <DependentUpon>ReportCheckForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SP_DAY_WISE_MONEY_REPORT_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_FollowUp_Result.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
@@ -207,6 +221,9 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DayWiseMoneyReportForm.resx">
+      <DependentUpon>DayWiseMoneyReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FollowUpForm.resx">
       <DependentUpon>FollowUpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +298,17 @@
     </None>
     <None Include="MISDBDataSet11.xss">
       <DependentUpon>MISDBDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet12.xsc">
+      <DependentUpon>MISDBDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet12.xss">
+      <DependentUpon>MISDBDataSet12.xsd</DependentUpon>
     </None>
     <None Include="MISDBDataSet2.xsc">
       <DependentUpon>MISDBDataSet2.xsd</DependentUpon>

@@ -46,3 +46,4 @@ F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.MotherFo
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.Properties.Resources.resources
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.ReportCheckForm.resources
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.csproj.GenerateResource.Cache
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.DayWiseMoneyReportForm.resources

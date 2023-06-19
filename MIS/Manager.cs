@@ -29,6 +29,14 @@ namespace MIS
             return q.ToList();
         }
 
+        internal List<SP_DAY_WISE_MONEY_REPORT_Result> GetDateWiseReport(DateTime SDate, DateTime EDate)
+        {
+            var context = new MISDBEntities();
+            var q = context.SP_DAY_WISE_MONEY_REPORT(SDate, EDate);
+            return q.ToList();
+        }
+        
+
         internal object FillItem()
         {
             var obj = new MISDBEntities();
