@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DayAndMoneyTypeWiseReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayAndMoneyTypeWiseReportForm.Designer.cs">
+      <DependentUpon>DayAndMoneyTypeWiseReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DayWiseMoneyReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MISDBDataSet14.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MISDBDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet15.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MISDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -210,6 +221,9 @@
     <Compile Include="ReportCheckForm.Designer.cs">
       <DependentUpon>ReportCheckForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SP_Day_And_MoneyType_Report_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_DAY_WISE_MONEY_REPORT_Result.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
@@ -240,6 +254,9 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DayAndMoneyTypeWiseReportForm.resx">
+      <DependentUpon>DayAndMoneyTypeWiseReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DayWiseMoneyReportForm.resx">
       <DependentUpon>DayWiseMoneyReportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +370,17 @@
     </None>
     <None Include="MISDBDataSet14.xss">
       <DependentUpon>MISDBDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet15.xsc">
+      <DependentUpon>MISDBDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet15.xss">
+      <DependentUpon>MISDBDataSet15.xsd</DependentUpon>
     </None>
     <None Include="MISDBDataSet2.xsc">
       <DependentUpon>MISDBDataSet2.xsd</DependentUpon>

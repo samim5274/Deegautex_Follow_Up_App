@@ -54,6 +54,13 @@ namespace MIS
             return q.ToList();
         }
 
+        public List<SP_Day_And_MoneyType_Report_Result> GetDayAndMoneyTypeReport(DateTime sdate, DateTime edate, int moneyType)
+        {
+            var context = new MISDBEntities();
+            var q = context.SP_Day_And_MoneyType_Report(sdate,edate,moneyType);
+            return q.ToList();
+        }
+
         internal object GetAllMoneyInfo()
         {
             var obj = new MISDBEntities();

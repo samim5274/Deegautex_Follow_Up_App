@@ -70,12 +70,8 @@ public partial class MISDBEntities : DbContext
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
     }
 
-        internal object SP_MoneyType_Wise_Transection_Report(object mType)
-        {
-            throw new NotImplementedException();
-        }
 
-        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+    public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
     {
 
         var diagramnameParameter = diagramname != null ?
@@ -258,6 +254,28 @@ public partial class MISDBEntities : DbContext
 
 
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_MoneyType_Wise_Transection_Report_Result>("SP_MoneyType_Wise_Transection_Report", mTypeParameter);
+    }
+
+
+    public virtual ObjectResult<SP_Day_And_MoneyType_Report_Result> SP_Day_And_MoneyType_Report(Nullable<System.DateTime> sDate, Nullable<System.DateTime> eDate, Nullable<int> mType)
+    {
+
+        var sDateParameter = sDate.HasValue ?
+            new ObjectParameter("SDate", sDate) :
+            new ObjectParameter("SDate", typeof(System.DateTime));
+
+
+        var eDateParameter = eDate.HasValue ?
+            new ObjectParameter("EDate", eDate) :
+            new ObjectParameter("EDate", typeof(System.DateTime));
+
+
+        var mTypeParameter = mType.HasValue ?
+            new ObjectParameter("MType", mType) :
+            new ObjectParameter("MType", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Day_And_MoneyType_Report_Result>("SP_Day_And_MoneyType_Report", sDateParameter, eDateParameter, mTypeParameter);
     }
 
 }

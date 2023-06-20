@@ -69,6 +69,11 @@
           <Parameter Name="version" Type="int" Mode="In" />
           <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
         </Function>
+        <Function Name="SP_Day_And_MoneyType_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SDate" Type="date" Mode="In" />
+          <Parameter Name="EDate" Type="date" Mode="In" />
+          <Parameter Name="MType" Type="int" Mode="In" />
+        </Function>
         <Function Name="SP_DAY_WISE_MONEY_REPORT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SDate" Type="date" Mode="In" />
           <Parameter Name="EDate" Type="date" Mode="In" />
@@ -162,6 +167,9 @@
             <Parameter Name="SDate" Mode="In" Type="DateTime" />
             <Parameter Name="EDate" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="SP_MoneyType_Wise_Transection_Report" ReturnType="Collection(MISDBModel.SP_MoneyType_Wise_Transection_Report_Result)">
+          <Parameter Name="MType" Mode="In" Type="Int32" />
+          </FunctionImport>
           <EntitySet Name="FollowUpTables" EntityType="MISDBModel.FollowUpTable" />
           <EntitySet Name="GiveAndReciveDeailTables" EntityType="MISDBModel.GiveAndReciveDeailTable" />
           <EntitySet Name="PurposeInfoes" EntityType="MISDBModel.PurposeInfo" />
@@ -170,7 +178,9 @@
             <End Role="PurposeInfo" EntitySet="PurposeInfoes" />
             <End Role="FollowUpTable" EntitySet="FollowUpTables" />
           </AssociationSet>
-          <FunctionImport Name="SP_MoneyType_Wise_Transection_Report" ReturnType="Collection(MISDBModel.SP_MoneyType_Wise_Transection_Report_Result)">
+          <FunctionImport Name="SP_Day_And_MoneyType_Report" ReturnType="Collection(MISDBModel.SP_Day_And_MoneyType_Report_Result)">
+            <Parameter Name="SDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EDate" Mode="In" Type="DateTime" />
             <Parameter Name="MType" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
@@ -215,6 +225,15 @@
           <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
         </ComplexType>
         <ComplexType Name="SP_DAY_WISE_MONEY_REPORT_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="String" Name="GiverName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ReciverName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Reson" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="Money" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_MoneyType_Wise_Transection_Report_Result">
           <Property Type="DateTime" Name="Date" Nullable="true" />
           <Property Type="String" Name="GiverName" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="ReciverName" Nullable="true" MaxLength="100" />
@@ -276,7 +295,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="SP_MoneyType_Wise_Transection_Report_Result">
+        <ComplexType Name="SP_Day_And_MoneyType_Report_Result">
           <Property Type="DateTime" Name="Date" Nullable="true" />
           <Property Type="String" Name="GiverName" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="ReciverName" Nullable="true" MaxLength="100" />
@@ -367,6 +386,19 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_MoneyType_Wise_Transection_Report" FunctionName="MISDBModel.Store.SP_MoneyType_Wise_Transection_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MISDBModel.SP_MoneyType_Wise_Transection_Report_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="GiverName" ColumnName="GiverName" />
+                <ScalarProperty Name="ReciverName" ColumnName="ReciverName" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Reson" ColumnName="Reson" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <EntitySetMapping Name="FollowUpTables">
             <EntityTypeMapping TypeName="MISDBModel.FollowUpTable">
               <MappingFragment StoreEntitySet="FollowUpTable">
@@ -410,9 +442,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_MoneyType_Wise_Transection_Report" FunctionName="MISDBModel.Store.SP_MoneyType_Wise_Transection_Report">
+          <FunctionImportMapping FunctionImportName="SP_Day_And_MoneyType_Report" FunctionName="MISDBModel.Store.SP_Day_And_MoneyType_Report">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="MISDBModel.SP_MoneyType_Wise_Transection_Report_Result">
+              <ComplexTypeMapping TypeName="MISDBModel.SP_Day_And_MoneyType_Report_Result">
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="GiverName" ColumnName="GiverName" />
                 <ScalarProperty Name="ReciverName" ColumnName="ReciverName" />

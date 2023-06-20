@@ -55,11 +55,16 @@
             this.dtpEDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.mISDBDataSet15 = new MIS.MISDBDataSet15();
+            this.sPDayAndMoneyTypeReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_Day_And_MoneyType_ReportTableAdapter = new MIS.MISDBDataSet15TableAdapters.SP_Day_And_MoneyType_ReportTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPMoneyTypeWiseTransectionReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMoneyTypeShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giveAndReciveDeailTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDayAndMoneyTypeReportBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMoney
@@ -162,7 +167,7 @@
             this.resonDataGridViewTextBoxColumn,
             this.typeDataGridViewTextBoxColumn,
             this.moneyDataGridViewTextBoxColumn});
-            this.dgvMoneyTypeShow.DataSource = this.sPMoneyTypeWiseTransectionReportBindingSource;
+            this.dgvMoneyTypeShow.DataSource = this.sPDayAndMoneyTypeReportBindingSource;
             this.dgvMoneyTypeShow.Location = new System.Drawing.Point(41, 222);
             this.dgvMoneyTypeShow.Name = "dgvMoneyTypeShow";
             this.dgvMoneyTypeShow.ReadOnly = true;
@@ -176,7 +181,7 @@
             this.dgvMoneyTypeShow.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMoneyTypeShow.RowHeadersVisible = false;
             this.dgvMoneyTypeShow.RowTemplate.Height = 24;
-            this.dgvMoneyTypeShow.Size = new System.Drawing.Size(1058, 437);
+            this.dgvMoneyTypeShow.Size = new System.Drawing.Size(1083, 437);
             this.dgvMoneyTypeShow.TabIndex = 11;
             // 
             // giveAndReciveDeailTableTableAdapter
@@ -212,6 +217,7 @@
             this.btnShow.TabIndex = 10;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // cbxMoneyType
             // 
@@ -228,22 +234,23 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 23);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(81, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1065, 55);
+            this.label2.Size = new System.Drawing.Size(972, 52);
             this.label2.TabIndex = 8;
             this.label2.Text = "Day and Money Type Wise Transection Report";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1120, 23);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1155, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 25);
+            this.label1.Size = new System.Drawing.Size(31, 29);
             this.label1.TabIndex = 7;
             this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dtpSDate
             // 
@@ -281,11 +288,25 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "End Date";
             // 
+            // mISDBDataSet15
+            // 
+            this.mISDBDataSet15.DataSetName = "MISDBDataSet15";
+            this.mISDBDataSet15.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sPDayAndMoneyTypeReportBindingSource
+            // 
+            this.sPDayAndMoneyTypeReportBindingSource.DataMember = "SP_Day_And_MoneyType_Report";
+            this.sPDayAndMoneyTypeReportBindingSource.DataSource = this.mISDBDataSet15;
+            // 
+            // sP_Day_And_MoneyType_ReportTableAdapter
+            // 
+            this.sP_Day_And_MoneyType_ReportTableAdapter.ClearBeforeFill = true;
+            // 
             // DayAndMoneyTypeWiseReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1171, 733);
+            this.ClientSize = new System.Drawing.Size(1207, 733);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtpEDate);
@@ -301,11 +322,14 @@
             this.Name = "DayAndMoneyTypeWiseReportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DayAndMoneyTypeWiseReportForm";
+            this.Load += new System.EventHandler(this.DayAndMoneyTypeWiseReportForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPMoneyTypeWiseTransectionReportBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMoneyTypeShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.giveAndReciveDeailTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDayAndMoneyTypeReportBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,5 +361,8 @@
         private System.Windows.Forms.DateTimePicker dtpEDate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.BindingSource sPDayAndMoneyTypeReportBindingSource;
+        private MISDBDataSet15 mISDBDataSet15;
+        private MISDBDataSet15TableAdapters.SP_Day_And_MoneyType_ReportTableAdapter sP_Day_And_MoneyType_ReportTableAdapter;
     }
 }
