@@ -137,6 +137,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MISDBDataSet12.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MISDBDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet14.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MISDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -177,6 +187,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MISDBDataSet9.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MoneyTypeWiseReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoneyTypeWiseReport.Designer.cs">
+      <DependentUpon>MoneyTypeWiseReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="MotherForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +225,9 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_MoneyType_Wise_Transection_Report_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_Purpose_Wise_Follow_Report_Result.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
@@ -232,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GiveAndReciveForm.resx">
       <DependentUpon>GiveAndReciveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoneyTypeWiseReport.resx">
+      <DependentUpon>MoneyTypeWiseReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MotherForm.resx">
       <DependentUpon>MotherForm.cs</DependentUpon>
@@ -309,6 +331,28 @@
     </None>
     <None Include="MISDBDataSet12.xss">
       <DependentUpon>MISDBDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet13.xsc">
+      <DependentUpon>MISDBDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet13.xss">
+      <DependentUpon>MISDBDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet14.xsc">
+      <DependentUpon>MISDBDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet14.xss">
+      <DependentUpon>MISDBDataSet14.xsd</DependentUpon>
     </None>
     <None Include="MISDBDataSet2.xsc">
       <DependentUpon>MISDBDataSet2.xsd</DependentUpon>

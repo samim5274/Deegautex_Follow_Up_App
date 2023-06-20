@@ -53,5 +53,12 @@ namespace MIS
             obj.MdiParent = this;
             obj.Show();
         }
+
+        private void moneyTypeWiseReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var obj = new MoneyTypeWiseReport();
+            obj.MdiParent = this;
+            obj.Show();
+        }
     }
 }

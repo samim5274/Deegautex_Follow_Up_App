@@ -175,6 +175,7 @@
             this.txtResion.Name = "txtResion";
             this.txtResion.Size = new System.Drawing.Size(224, 127);
             this.txtResion.TabIndex = 11;
+            this.txtResion.Text = "N/A";
             // 
             // lblTime
             // 

@@ -70,8 +70,12 @@ public partial class MISDBEntities : DbContext
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
     }
 
+        internal object SP_MoneyType_Wise_Transection_Report(object mType)
+        {
+            throw new NotImplementedException();
+        }
 
-    public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
     {
 
         var diagramnameParameter = diagramname != null ?
@@ -242,6 +246,18 @@ public partial class MISDBEntities : DbContext
 
 
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_DAY_WISE_MONEY_REPORT_Result>("SP_DAY_WISE_MONEY_REPORT", sDateParameter, eDateParameter);
+    }
+
+
+    public virtual ObjectResult<SP_MoneyType_Wise_Transection_Report_Result> SP_MoneyType_Wise_Transection_Report(Nullable<int> mType)
+    {
+
+        var mTypeParameter = mType.HasValue ?
+            new ObjectParameter("MType", mType) :
+            new ObjectParameter("MType", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_MoneyType_Wise_Transection_Report_Result>("SP_MoneyType_Wise_Transection_Report", mTypeParameter);
     }
 
 }

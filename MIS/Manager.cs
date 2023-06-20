@@ -8,6 +8,9 @@ namespace MIS
 {
     class Manager
     {
+        public String Id { get; set; }
+        public String Name { get; set; }
+
         public object FillAllPurpose()
         {
             var obj = new MISDBEntities();
@@ -35,12 +38,19 @@ namespace MIS
             var q = context.SP_DAY_WISE_MONEY_REPORT(SDate, EDate);
             return q.ToList();
         }
-        
+
 
         internal object FillItem()
         {
             var obj = new MISDBEntities();
             var q = from i in obj.FollowUpTables select i;
+            return q.ToList();
+        }
+
+        internal List<SP_MoneyType_Wise_Transection_Report_Result> GettMoneyTypeReport(int mtp)
+        {
+            var context = new MISDBEntities();
+            var q = context.SP_MoneyType_Wise_Transection_Report(mtp);
             return q.ToList();
         }
 

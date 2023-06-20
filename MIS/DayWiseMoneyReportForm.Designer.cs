@@ -36,11 +36,6 @@
             this.dtpSDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEDate = new System.Windows.Forms.DateTimePicker();
             this.dgvDayWiseTransection = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.mISDBDataSet12 = new MIS.MISDBDataSet12();
-            this.sPDAYWISEMONEYREPORTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sP_DAY_WISE_MONEY_REPORTTableAdapter = new MIS.MISDBDataSet12TableAdapters.SP_DAY_WISE_MONEY_REPORTTableAdapter();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giverNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reciverNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +43,14 @@
             this.resonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moneyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPDAYWISEMONEYREPORTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mISDBDataSet12 = new MIS.MISDBDataSet12();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.sP_DAY_WISE_MONEY_REPORTTableAdapter = new MIS.MISDBDataSet12TableAdapters.SP_DAY_WISE_MONEY_REPORTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDayWiseTransection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPDAYWISEMONEYREPORTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet12)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -131,40 +131,6 @@
             this.dgvDayWiseTransection.Size = new System.Drawing.Size(1116, 429);
             this.dgvDayWiseTransection.TabIndex = 5;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(719, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 24);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "End Date";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(331, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 24);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Start Date";
-            // 
-            // mISDBDataSet12
-            // 
-            this.mISDBDataSet12.DataSetName = "MISDBDataSet12";
-            this.mISDBDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sPDAYWISEMONEYREPORTBindingSource
-            // 
-            this.sPDAYWISEMONEYREPORTBindingSource.DataMember = "SP_DAY_WISE_MONEY_REPORT";
-            this.sPDAYWISEMONEYREPORTBindingSource.DataSource = this.mISDBDataSet12;
-            // 
-            // sP_DAY_WISE_MONEY_REPORTTableAdapter
-            // 
-            this.sP_DAY_WISE_MONEY_REPORTTableAdapter.ClearBeforeFill = true;
-            // 
             // dateDataGridViewTextBoxColumn
             // 
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
@@ -217,6 +183,40 @@
             this.moneyDataGridViewTextBoxColumn.Name = "moneyDataGridViewTextBoxColumn";
             this.moneyDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // sPDAYWISEMONEYREPORTBindingSource
+            // 
+            this.sPDAYWISEMONEYREPORTBindingSource.DataMember = "SP_DAY_WISE_MONEY_REPORT";
+            this.sPDAYWISEMONEYREPORTBindingSource.DataSource = this.mISDBDataSet12;
+            // 
+            // mISDBDataSet12
+            // 
+            this.mISDBDataSet12.DataSetName = "MISDBDataSet12";
+            this.mISDBDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(719, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 24);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "End Date";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(331, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 24);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Start Date";
+            // 
+            // sP_DAY_WISE_MONEY_REPORTTableAdapter
+            // 
+            this.sP_DAY_WISE_MONEY_REPORTTableAdapter.ClearBeforeFill = true;
+            // 
             // DayWiseMoneyReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -236,8 +236,8 @@
             this.Text = "DayWiseMoneyReportForm";
             this.Load += new System.EventHandler(this.DayWiseMoneyReportForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDayWiseTransection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPDAYWISEMONEYREPORTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet12)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

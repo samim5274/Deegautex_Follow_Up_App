@@ -64,6 +64,19 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DAY_WISE_MONEY_REPORT" FunctionName="MISDBModel.Store.SP_DAY_WISE_MONEY_REPORT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MISDBModel.SP_DAY_WISE_MONEY_REPORT_Result">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="GiverName" ColumnName="GiverName" />
+          <ScalarProperty Name="ReciverName" ColumnName="ReciverName" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Reson" ColumnName="Reson" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="FollowUpTables">
       <EntityTypeMapping TypeName="MISDBModel.FollowUpTable">
         <MappingFragment StoreEntitySet="FollowUpTable">
@@ -107,9 +120,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="SP_DAY_WISE_MONEY_REPORT" FunctionName="MISDBModel.Store.SP_DAY_WISE_MONEY_REPORT">
+    <FunctionImportMapping FunctionImportName="SP_MoneyType_Wise_Transection_Report" FunctionName="MISDBModel.Store.SP_MoneyType_Wise_Transection_Report">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="MISDBModel.SP_DAY_WISE_MONEY_REPORT_Result">
+        <ComplexTypeMapping TypeName="MISDBModel.SP_MoneyType_Wise_Transection_Report_Result">
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="GiverName" ColumnName="GiverName" />
           <ScalarProperty Name="ReciverName" ColumnName="ReciverName" />

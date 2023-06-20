@@ -42,6 +42,10 @@
     <FunctionImport Name="SP_Report" ReturnType="Collection(MISDBModel.SP_Report_Result)">
       <Parameter Name="PID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="SP_DAY_WISE_MONEY_REPORT" ReturnType="Collection(MISDBModel.SP_DAY_WISE_MONEY_REPORT_Result)">
+      <Parameter Name="SDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
     <EntitySet Name="FollowUpTables" EntityType="MISDBModel.FollowUpTable" />
     <EntitySet Name="GiveAndReciveDeailTables" EntityType="MISDBModel.GiveAndReciveDeailTable" />
     <EntitySet Name="PurposeInfoes" EntityType="MISDBModel.PurposeInfo" />
@@ -50,9 +54,8 @@
       <End Role="PurposeInfo" EntitySet="PurposeInfoes" />
       <End Role="FollowUpTable" EntitySet="FollowUpTables" />
     </AssociationSet>
-    <FunctionImport Name="SP_DAY_WISE_MONEY_REPORT" ReturnType="Collection(MISDBModel.SP_DAY_WISE_MONEY_REPORT_Result)">
-      <Parameter Name="SDate" Mode="In" Type="DateTime" />
-      <Parameter Name="EDate" Mode="In" Type="DateTime" />
+    <FunctionImport Name="SP_MoneyType_Wise_Transection_Report" ReturnType="Collection(MISDBModel.SP_MoneyType_Wise_Transection_Report_Result)">
+      <Parameter Name="MType" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -94,6 +97,15 @@
     <Property Type="String" Name="Purpose" Nullable="true" MaxLength="200" />
     <Property Type="String" Name="FollowUp" Nullable="true" MaxLength="200" />
     <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_DAY_WISE_MONEY_REPORT_Result">
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="String" Name="GiverName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ReciverName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Reson" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="8" />
+    <Property Type="Int32" Name="Money" Nullable="true" />
   </ComplexType>
   <EntityType Name="FollowUpTable">
     <Key>
@@ -148,7 +160,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <ComplexType Name="SP_DAY_WISE_MONEY_REPORT_Result">
+  <ComplexType Name="SP_MoneyType_Wise_Transection_Report_Result">
     <Property Type="DateTime" Name="Date" Nullable="true" />
     <Property Type="String" Name="GiverName" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="ReciverName" Nullable="true" MaxLength="100" />

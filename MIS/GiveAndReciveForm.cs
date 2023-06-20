@@ -30,6 +30,7 @@ namespace MIS
         private void dtpDate_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            dtpDate.Value = DateTime.Now;
             ClearText();
             FillGrid();     
         }
@@ -51,6 +52,10 @@ namespace MIS
             chkTaking.Checked = false;
             lblTime2.Visible = false;
             txtSearch.Text = string.Empty;
+            button1.Text = "Save";
+            button1.Enabled = false;
+            button3.Enabled = false;
+            dtpDate.Value = DateTime.Now;
         }
 
         private void button1_Click(object sender, EventArgs e)
