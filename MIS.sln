@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIS", "MIS\MIS.csproj", "{CF1E3885-9225-4BC8-BB79-2986D2B1DBA1}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{5B6FD141-37EE-48A1-A71D-0EA5A0D15351}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{CF1E3885-9225-4BC8-BB79-2986D2B1DBA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF1E3885-9225-4BC8-BB79-2986D2B1DBA1}.Release|x64.ActiveCfg = Release|x64
 		{CF1E3885-9225-4BC8-BB79-2986D2B1DBA1}.Release|x64.Build.0 = Release|x64
+		{5B6FD141-37EE-48A1-A71D-0EA5A0D15351}.Debug|Any CPU.ActiveCfg = Debug
+		{5B6FD141-37EE-48A1-A71D-0EA5A0D15351}.Debug|x64.ActiveCfg = Debug
+		{5B6FD141-37EE-48A1-A71D-0EA5A0D15351}.Release|Any CPU.ActiveCfg = Release
+		{5B6FD141-37EE-48A1-A71D-0EA5A0D15351}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

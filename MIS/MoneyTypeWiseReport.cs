@@ -46,6 +46,7 @@ namespace MIS
 
         private void FillTotalAmount()
         {
+            lblMoney.Text = "0";
             for (int i = 0; i < dgvMoneyType.Rows.Count; i++)
             {
                 lblMoney.Text = Convert.ToString(double.Parse(lblMoney.Text) + double.Parse(dgvMoneyType.Rows[i].Cells[6].Value.ToString()));

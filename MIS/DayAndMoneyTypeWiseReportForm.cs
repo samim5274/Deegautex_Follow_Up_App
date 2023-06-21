@@ -43,6 +43,7 @@ namespace MIS
 
         private void FillAmount()
         {
+            lblMoney.Text = "0";
             for (int i = 0; i < dgvMoneyTypeShow.Rows.Count; i++)
             {
                 lblMoney.Text = Convert.ToString(double.Parse(lblMoney.Text) + double.Parse(dgvMoneyTypeShow.Rows[i].Cells[6].Value.ToString()));
@@ -53,11 +54,17 @@ namespace MIS
         {
             var Sdate = Convert.ToDateTime(dtpSDate.Value);
             var Edate = Convert.ToDateTime(dtpEDate.Value);
+            
             var MoneyType = Convert.ToInt32(cbxMoneyType.SelectedValue);
 
             var mngr = new Manager();
             var list = mngr.GetDayAndMoneyTypeReport(Sdate,Edate,MoneyType);
             dgvMoneyTypeShow.DataSource = list;
+
+
+            //DayMonthYear and time code
+            //lblDate.Text = DateTime.Now.ToLongTimeString();
+            //lblTime2.Text = DateTime.Now.ToLongDateString();
         }
 
         private void label1_Click(object sender, EventArgs e)

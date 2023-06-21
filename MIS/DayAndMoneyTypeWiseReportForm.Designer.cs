@@ -43,6 +43,8 @@
             this.giverNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvMoneyTypeShow = new System.Windows.Forms.DataGridView();
+            this.sPDayAndMoneyTypeReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mISDBDataSet15 = new MIS.MISDBDataSet15();
             this.giveAndReciveDeailTableTableAdapter = new MIS.MISDBDataSet13TableAdapters.GiveAndReciveDeailTableTableAdapter();
             this.giveAndReciveDeailTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mISDBDataSet13 = new MIS.MISDBDataSet13();
@@ -55,16 +57,14 @@
             this.dtpEDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.mISDBDataSet15 = new MIS.MISDBDataSet15();
-            this.sPDayAndMoneyTypeReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_Day_And_MoneyType_ReportTableAdapter = new MIS.MISDBDataSet15TableAdapters.SP_Day_And_MoneyType_ReportTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPMoneyTypeWiseTransectionReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMoneyTypeShow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDayAndMoneyTypeReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giveAndReciveDeailTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPDayAndMoneyTypeReportBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMoney
@@ -184,6 +184,16 @@
             this.dgvMoneyTypeShow.Size = new System.Drawing.Size(1083, 437);
             this.dgvMoneyTypeShow.TabIndex = 11;
             // 
+            // sPDayAndMoneyTypeReportBindingSource
+            // 
+            this.sPDayAndMoneyTypeReportBindingSource.DataMember = "SP_Day_And_MoneyType_Report";
+            this.sPDayAndMoneyTypeReportBindingSource.DataSource = this.mISDBDataSet15;
+            // 
+            // mISDBDataSet15
+            // 
+            this.mISDBDataSet15.DataSetName = "MISDBDataSet15";
+            this.mISDBDataSet15.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // giveAndReciveDeailTableTableAdapter
             // 
             this.giveAndReciveDeailTableTableAdapter.ClearBeforeFill = true;
@@ -237,7 +247,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(81, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(972, 52);
+            this.label2.Size = new System.Drawing.Size(957, 51);
             this.label2.TabIndex = 8;
             this.label2.Text = "Day and Money Type Wise Transection Report";
             // 
@@ -288,16 +298,6 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "End Date";
             // 
-            // mISDBDataSet15
-            // 
-            this.mISDBDataSet15.DataSetName = "MISDBDataSet15";
-            this.mISDBDataSet15.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sPDayAndMoneyTypeReportBindingSource
-            // 
-            this.sPDayAndMoneyTypeReportBindingSource.DataMember = "SP_Day_And_MoneyType_Report";
-            this.sPDayAndMoneyTypeReportBindingSource.DataSource = this.mISDBDataSet15;
-            // 
             // sP_Day_And_MoneyType_ReportTableAdapter
             // 
             this.sP_Day_And_MoneyType_ReportTableAdapter.ClearBeforeFill = true;
@@ -326,10 +326,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPMoneyTypeWiseTransectionReportBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMoneyTypeShow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDayAndMoneyTypeReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.giveAndReciveDeailTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPDayAndMoneyTypeReportBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
