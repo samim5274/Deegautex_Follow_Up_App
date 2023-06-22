@@ -38,7 +38,6 @@ F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\EntityFramew
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\EntityFramework.SqlServer.dll
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\EntityFramework.xml
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\EntityFramework.SqlServer.xml
-F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.csprojResolveAssemblyReference.cache
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.FollowUpForm.resources
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.FollowUpWiseReportFrom.resources
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.GivenAndReciveForm.resources
@@ -49,3 +48,4 @@ F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.csproj.G
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.DayWiseMoneyReportForm.resources
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.MoneyTypeWiseReport.resources
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.DayAndMoneyTypeWiseReportForm.resources
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.csprojResolveAssemblyReference.cache
