@@ -86,6 +86,7 @@
     <Parameter Name="version" Type="int" Mode="In" />
     <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
   </Function>
+  <Function Name="SP_Daily_Followup_Check" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SP_Day_And_MoneyType_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="SDate" Type="date" Mode="In" />
     <Parameter Name="EDate" Type="date" Mode="In" />
@@ -111,6 +112,9 @@
   </Function>
   <Function Name="SP_MoneyType_Wise_Transection_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="MType" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Purpose_Wise_Fill_Follow_Item" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PID" Type="int" Mode="In" />
   </Function>
   <Function Name="SP_Purpose_Wise_Follow_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PopId" Type="int" Mode="In" />

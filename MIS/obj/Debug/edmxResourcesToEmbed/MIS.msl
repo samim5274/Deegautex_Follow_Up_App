@@ -157,5 +157,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_Daily_Followup_Check" FunctionName="MISDBModel.Store.SP_Daily_Followup_Check">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MISDBModel.SP_Daily_Followup_Check_Result">
+          <ScalarProperty Name="F_Date" ColumnName="F_Date" />
+          <ScalarProperty Name="FollowUp" ColumnName="FollowUp" />
+          <ScalarProperty Name="F_Check" ColumnName="F_Check" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Purpose_Wise_Fill_Follow_Item" FunctionName="MISDBModel.Store.SP_Purpose_Wise_Fill_Follow_Item">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MISDBModel.SP_Purpose_Wise_Fill_Follow_Item_Result">
+          <ScalarProperty Name="FollowUp" ColumnName="FollowUp" />
+          <ScalarProperty Name="PId" ColumnName="PId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

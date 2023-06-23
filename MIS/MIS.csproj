@@ -228,11 +228,20 @@
     <Compile Include="PurposeInfo.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
+    <Compile Include="PurposeWiseFollowUpItemFillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurposeWiseFollowUpItemFillForm.Designer.cs">
+      <DependentUpon>PurposeWiseFollowUpItemFillForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportCheckForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportCheckForm.Designer.cs">
       <DependentUpon>ReportCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Daily_Followup_Check_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_Day_And_MoneyType_Report_Result.cs">
       <DependentUpon>MIS.tt</DependentUpon>
@@ -253,6 +262,9 @@
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_MoneyType_Wise_Transection_Report_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Purpose_Wise_Fill_Follow_Item_Result.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_Purpose_Wise_Follow_Report_Result.cs">
@@ -297,6 +309,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PurposeWiseFollowUpItemFillForm.resx">
+      <DependentUpon>PurposeWiseFollowUpItemFillForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportCheckForm.resx">
       <DependentUpon>ReportCheckForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -39,6 +39,12 @@ namespace MIS
             return q.ToList();
         }
 
+        public List<SP_Purpose_Wise_Fill_Follow_Item_Result> FillFollowCombo(int pid)
+        {
+            var context = new MISDBEntities();
+            var q = context.SP_Purpose_Wise_Fill_Follow_Item(pid);
+            return q.ToList();
+        }
 
         internal object FillItem()
         {

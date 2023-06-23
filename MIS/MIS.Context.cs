@@ -280,6 +280,25 @@ public partial class MISDBEntities : DbContext
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Day_And_MoneyType_Report_Result>("SP_Day_And_MoneyType_Report", sDateParameter, eDateParameter, mTypeParameter);
     }
 
+
+    public virtual ObjectResult<SP_Daily_Followup_Check_Result> SP_Daily_Followup_Check()
+    {
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Daily_Followup_Check_Result>("SP_Daily_Followup_Check");
+    }
+
+
+    public virtual ObjectResult<SP_Purpose_Wise_Fill_Follow_Item_Result> SP_Purpose_Wise_Fill_Follow_Item(Nullable<int> pID)
+    {
+
+        var pIDParameter = pID.HasValue ?
+            new ObjectParameter("PID", pID) :
+            new ObjectParameter("PID", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Purpose_Wise_Fill_Follow_Item_Result>("SP_Purpose_Wise_Fill_Follow_Item", pIDParameter);
+    }
+
 }
 
 }
