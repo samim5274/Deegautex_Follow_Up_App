@@ -66,6 +66,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DailyFollowUpInfo.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
     <Compile Include="DayAndMoneyTypeWiseReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +160,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MISDBDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet17.xsd</DependentUpon>
     </Compile>
     <Compile Include="MISDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -381,6 +394,28 @@
     </None>
     <None Include="MISDBDataSet15.xss">
       <DependentUpon>MISDBDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet16.xsc">
+      <DependentUpon>MISDBDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet16.xss">
+      <DependentUpon>MISDBDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet17.xsc">
+      <DependentUpon>MISDBDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet17.xss">
+      <DependentUpon>MISDBDataSet17.xsd</DependentUpon>
     </None>
     <None Include="MISDBDataSet2.xsc">
       <DependentUpon>MISDBDataSet2.xsd</DependentUpon>

@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="MISDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DailyFollowUpInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_Id" Type="int" />
+          <Property Name="F_Check" Type="varchar" MaxLength="50" />
+          <Property Name="Remark" Type="varchar" MaxLength="200" />
+          <Property Name="F_Date" Type="date" />
+        </EntityType>
         <EntityType Name="FollowUpTable">
           <Key>
             <PropertyRef Name="Id" />
@@ -44,6 +54,18 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <Association Name="FK_DailyFollowUpInfo_FollowUpTable">
+          <End Role="FollowUpTable" Type="Self.FollowUpTable" Multiplicity="0..1" />
+          <End Role="DailyFollowUpInfo" Type="Self.DailyFollowUpInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FollowUpTable">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailyFollowUpInfo">
+              <PropertyRef Name="F_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_FollowUpTable_PurposeInfo">
           <End Role="PurposeInfo" Type="Self.PurposeInfo" Multiplicity="0..1" />
           <End Role="FollowUpTable" Type="Self.FollowUpTable" Multiplicity="*" />
@@ -108,10 +130,15 @@
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="MISDBModelStoreContainer">
+          <EntitySet Name="DailyFollowUpInfo" EntityType="Self.DailyFollowUpInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FollowUpTable" EntityType="Self.FollowUpTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GiveAndReciveDeailTable" EntityType="Self.GiveAndReciveDeailTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PurposeInfo" EntityType="Self.PurposeInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DailyFollowUpInfo_FollowUpTable" Association="Self.FK_DailyFollowUpInfo_FollowUpTable">
+            <End Role="FollowUpTable" EntitySet="FollowUpTable" />
+            <End Role="DailyFollowUpInfo" EntitySet="DailyFollowUpInfo" />
+          </AssociationSet>
           <AssociationSet Name="FK_FollowUpTable_PurposeInfo" Association="Self.FK_FollowUpTable_PurposeInfo">
             <End Role="PurposeInfo" EntitySet="PurposeInfo" />
             <End Role="FollowUpTable" EntitySet="FollowUpTable" />
@@ -170,20 +197,25 @@
           <FunctionImport Name="SP_MoneyType_Wise_Transection_Report" ReturnType="Collection(MISDBModel.SP_MoneyType_Wise_Transection_Report_Result)">
           <Parameter Name="MType" Mode="In" Type="Int32" />
           </FunctionImport>
-          <EntitySet Name="FollowUpTables" EntityType="MISDBModel.FollowUpTable" />
-          <EntitySet Name="GiveAndReciveDeailTables" EntityType="MISDBModel.GiveAndReciveDeailTable" />
-          <EntitySet Name="PurposeInfoes" EntityType="MISDBModel.PurposeInfo" />
-          <EntitySet Name="sysdiagrams" EntityType="MISDBModel.sysdiagram" />
-          <AssociationSet Name="FK_FollowUpTable_PurposeInfo" Association="MISDBModel.FK_FollowUpTable_PurposeInfo">
-            <End Role="PurposeInfo" EntitySet="PurposeInfoes" />
-            <End Role="FollowUpTable" EntitySet="FollowUpTables" />
-          </AssociationSet>
           <FunctionImport Name="SP_Day_And_MoneyType_Report" ReturnType="Collection(MISDBModel.SP_Day_And_MoneyType_Report_Result)">
             <Parameter Name="SDate" Mode="In" Type="DateTime" />
             <Parameter Name="EDate" Mode="In" Type="DateTime" />
             <Parameter Name="MType" Mode="In" Type="Int32" />
           </FunctionImport>
-        </EntityContainer>
+          <EntitySet Name="DailyFollowUpInfoes" EntityType="MISDBModel.DailyFollowUpInfo" />
+          <EntitySet Name="FollowUpTables" EntityType="MISDBModel.FollowUpTable" />
+          <EntitySet Name="GiveAndReciveDeailTables" EntityType="MISDBModel.GiveAndReciveDeailTable" />
+          <EntitySet Name="PurposeInfoes" EntityType="MISDBModel.PurposeInfo" />
+          <EntitySet Name="sysdiagrams" EntityType="MISDBModel.sysdiagram" />
+          <AssociationSet Name="FK_DailyFollowUpInfo_FollowUpTable" Association="MISDBModel.FK_DailyFollowUpInfo_FollowUpTable">
+            <End Role="FollowUpTable" EntitySet="FollowUpTables" />
+            <End Role="DailyFollowUpInfo" EntitySet="DailyFollowUpInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FollowUpTable_PurposeInfo" Association="MISDBModel.FK_FollowUpTable_PurposeInfo">
+            <End Role="PurposeInfo" EntitySet="PurposeInfoes" />
+            <End Role="FollowUpTable" EntitySet="FollowUpTables" />
+          </AssociationSet>
+          </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
           <Property Type="Binary" Name="definition" Nullable="true" />
@@ -242,6 +274,26 @@
           <Property Type="String" Name="Type" Nullable="false" MaxLength="8" />
           <Property Type="Int32" Name="Money" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="SP_Day_And_MoneyType_Report_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="String" Name="GiverName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ReciverName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Reson" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="Money" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="DailyFollowUpInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_Id" Type="Int32" />
+          <Property Name="F_Check" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="F_Date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="FollowUpTable" Relationship="MISDBModel.FK_DailyFollowUpInfo_FollowUpTable" FromRole="DailyFollowUpInfo" ToRole="FollowUpTable" />
+        </EntityType>
         <EntityType Name="FollowUpTable">
           <Key>
             <PropertyRef Name="Id" />
@@ -250,6 +302,7 @@
           <Property Name="FollowUp" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="PId" Type="Int32" />
+          <NavigationProperty Name="DailyFollowUpInfoes" Relationship="MISDBModel.FK_DailyFollowUpInfo_FollowUpTable" FromRole="FollowUpTable" ToRole="DailyFollowUpInfo" />
           <NavigationProperty Name="PurposeInfo" Relationship="MISDBModel.FK_FollowUpTable_PurposeInfo" FromRole="FollowUpTable" ToRole="PurposeInfo" />
         </EntityType>
         <EntityType Name="GiveAndReciveDeailTable">
@@ -283,6 +336,18 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <Association Name="FK_DailyFollowUpInfo_FollowUpTable">
+          <End Type="MISDBModel.FollowUpTable" Role="FollowUpTable" Multiplicity="0..1" />
+          <End Type="MISDBModel.DailyFollowUpInfo" Role="DailyFollowUpInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FollowUpTable">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailyFollowUpInfo">
+              <PropertyRef Name="F_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_FollowUpTable_PurposeInfo">
           <End Type="MISDBModel.PurposeInfo" Role="PurposeInfo" Multiplicity="0..1" />
           <End Type="MISDBModel.FollowUpTable" Role="FollowUpTable" Multiplicity="*" />
@@ -295,16 +360,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="SP_Day_And_MoneyType_Report_Result">
-          <Property Type="DateTime" Name="Date" Nullable="true" />
-          <Property Type="String" Name="GiverName" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="ReciverName" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Reson" Nullable="true" MaxLength="150" />
-          <Property Type="String" Name="Type" Nullable="false" MaxLength="8" />
-          <Property Type="Int32" Name="Money" Nullable="true" />
-        </ComplexType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -399,6 +455,30 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Day_And_MoneyType_Report" FunctionName="MISDBModel.Store.SP_Day_And_MoneyType_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MISDBModel.SP_Day_And_MoneyType_Report_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="GiverName" ColumnName="GiverName" />
+                <ScalarProperty Name="ReciverName" ColumnName="ReciverName" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Reson" ColumnName="Reson" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="DailyFollowUpInfoes">
+            <EntityTypeMapping TypeName="MISDBModel.DailyFollowUpInfo">
+              <MappingFragment StoreEntitySet="DailyFollowUpInfo">
+                <ScalarProperty Name="F_Date" ColumnName="F_Date" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="F_Check" ColumnName="F_Check" />
+                <ScalarProperty Name="F_Id" ColumnName="F_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="FollowUpTables">
             <EntityTypeMapping TypeName="MISDBModel.FollowUpTable">
               <MappingFragment StoreEntitySet="FollowUpTable">
@@ -442,19 +522,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_Day_And_MoneyType_Report" FunctionName="MISDBModel.Store.SP_Day_And_MoneyType_Report">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="MISDBModel.SP_Day_And_MoneyType_Report_Result">
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="GiverName" ColumnName="GiverName" />
-                <ScalarProperty Name="ReciverName" ColumnName="ReciverName" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="Reson" ColumnName="Reson" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Money" ColumnName="Money" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

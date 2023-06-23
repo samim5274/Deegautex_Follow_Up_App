@@ -18,6 +18,15 @@ using System;
 public partial class FollowUpTable
 {
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public FollowUpTable()
+    {
+
+        this.DailyFollowUpInfoes = new HashSet<DailyFollowUpInfo>();
+
+    }
+
+
     public int Id { get; set; }
 
     public string FollowUp { get; set; }
@@ -27,6 +36,10 @@ public partial class FollowUpTable
     public Nullable<int> PId { get; set; }
 
 
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+    public virtual ICollection<DailyFollowUpInfo> DailyFollowUpInfoes { get; set; }
 
     public virtual PurposeInfo PurposeInfo { get; set; }
 

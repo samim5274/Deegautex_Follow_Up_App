@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvReportFollowYesNo = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,11 +47,24 @@
             this.mISDBDataSet8 = new MIS.MISDBDataSet8();
             this.sPFollowUpBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_FollowUpTableAdapter = new MIS.MISDBDataSet8TableAdapters.SP_FollowUpTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblCheck = new System.Windows.Forms.Label();
+            this.mISDBDataSet16 = new MIS.MISDBDataSet16();
+            this.dailyFollowUpInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dailyFollowUpInfoTableAdapter = new MIS.MISDBDataSet16TableAdapters.DailyFollowUpInfoTableAdapter();
+            this.mISDBDataSet17 = new MIS.MISDBDataSet17();
+            this.sPDailyFollowupCheckBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_Daily_Followup_CheckTableAdapter = new MIS.MISDBDataSet17TableAdapters.SP_Daily_Followup_CheckTableAdapter();
+            this.F_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FollowUp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fCheckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remarkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportFollowYesNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPFollowUpBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dailyFollowUpInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDailyFollowupCheckBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,23 +82,30 @@
             // 
             this.dgvReportFollowYesNo.AllowUserToAddRows = false;
             this.dgvReportFollowYesNo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReportFollowYesNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvReportFollowYesNo.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReportFollowYesNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvReportFollowYesNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReportFollowYesNo.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvReportFollowYesNo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.F_Date,
+            this.FollowUp,
+            this.fCheckDataGridViewTextBoxColumn,
+            this.remarkDataGridViewTextBoxColumn});
+            this.dgvReportFollowYesNo.DataSource = this.sPDailyFollowupCheckBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReportFollowYesNo.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvReportFollowYesNo.Location = new System.Drawing.Point(39, 376);
             this.dgvReportFollowYesNo.Name = "dgvReportFollowYesNo";
             this.dgvReportFollowYesNo.ReadOnly = true;
@@ -107,6 +127,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(716, 139);
             this.btnSave.Name = "btnSave";
@@ -114,6 +135,7 @@
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cbxItem
             // 
@@ -123,7 +145,6 @@
             this.cbxItem.Name = "cbxItem";
             this.cbxItem.Size = new System.Drawing.Size(281, 34);
             this.cbxItem.TabIndex = 11;
-            this.cbxItem.SelectionChangeCommitted += new System.EventHandler(this.cbxItem_SelectionChangeCommitted);
             // 
             // label3
             // 
@@ -174,6 +195,7 @@
             this.cbYes.TabIndex = 17;
             this.cbYes.Text = "Yes";
             this.cbYes.UseVisualStyleBackColor = true;
+            this.cbYes.CheckedChanged += new System.EventHandler(this.cbYes_CheckedChanged);
             // 
             // cbNo
             // 
@@ -185,6 +207,7 @@
             this.cbNo.TabIndex = 18;
             this.cbNo.Text = "No";
             this.cbNo.UseVisualStyleBackColor = true;
+            this.cbNo.CheckedChanged += new System.EventHandler(this.cbNo_CheckedChanged);
             // 
             // dtpToday
             // 
@@ -221,29 +244,82 @@
             // 
             this.sP_FollowUpTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox1
+            // lblCheck
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPFollowUpBindingSource, "Purpose", true));
-            this.textBox1.Location = new System.Drawing.Point(749, 230);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 21;
+            this.lblCheck.AutoSize = true;
+            this.lblCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheck.Location = new System.Drawing.Point(676, 202);
+            this.lblCheck.Name = "lblCheck";
+            this.lblCheck.Size = new System.Drawing.Size(36, 20);
+            this.lblCheck.TabIndex = 23;
+            this.lblCheck.Text = "Y/N";
+            this.lblCheck.Visible = false;
             // 
-            // textBox2
+            // mISDBDataSet16
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPFollowUpBindingSource, "Purpose", true));
-            this.textBox2.Location = new System.Drawing.Point(749, 273);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 22;
+            this.mISDBDataSet16.DataSetName = "MISDBDataSet16";
+            this.mISDBDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dailyFollowUpInfoBindingSource
+            // 
+            this.dailyFollowUpInfoBindingSource.DataMember = "DailyFollowUpInfo";
+            this.dailyFollowUpInfoBindingSource.DataSource = this.mISDBDataSet16;
+            // 
+            // dailyFollowUpInfoTableAdapter
+            // 
+            this.dailyFollowUpInfoTableAdapter.ClearBeforeFill = true;
+            // 
+            // mISDBDataSet17
+            // 
+            this.mISDBDataSet17.DataSetName = "MISDBDataSet17";
+            this.mISDBDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sPDailyFollowupCheckBindingSource
+            // 
+            this.sPDailyFollowupCheckBindingSource.DataMember = "SP_Daily_Followup_Check";
+            this.sPDailyFollowupCheckBindingSource.DataSource = this.mISDBDataSet17;
+            // 
+            // sP_Daily_Followup_CheckTableAdapter
+            // 
+            this.sP_Daily_Followup_CheckTableAdapter.ClearBeforeFill = true;
+            // 
+            // F_Date
+            // 
+            this.F_Date.DataPropertyName = "F_Date";
+            this.F_Date.HeaderText = "Date";
+            this.F_Date.Name = "F_Date";
+            this.F_Date.ReadOnly = true;
+            // 
+            // FollowUp
+            // 
+            this.FollowUp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FollowUp.DataPropertyName = "FollowUp";
+            this.FollowUp.HeaderText = "Follow Up Item";
+            this.FollowUp.Name = "FollowUp";
+            this.FollowUp.ReadOnly = true;
+            // 
+            // fCheckDataGridViewTextBoxColumn
+            // 
+            this.fCheckDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fCheckDataGridViewTextBoxColumn.DataPropertyName = "F_Check";
+            this.fCheckDataGridViewTextBoxColumn.HeaderText = "Follow up Check Yes/No";
+            this.fCheckDataGridViewTextBoxColumn.Name = "fCheckDataGridViewTextBoxColumn";
+            this.fCheckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // remarkDataGridViewTextBoxColumn
+            // 
+            this.remarkDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.remarkDataGridViewTextBoxColumn.DataPropertyName = "Remark";
+            this.remarkDataGridViewTextBoxColumn.HeaderText = "Remark";
+            this.remarkDataGridViewTextBoxColumn.Name = "remarkDataGridViewTextBoxColumn";
+            this.remarkDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ReportCheckForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1248, 738);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblCheck);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dtpToday);
             this.Controls.Add(this.cbNo);
@@ -265,6 +341,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportFollowYesNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPFollowUpBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dailyFollowUpInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mISDBDataSet17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDailyFollowupCheckBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,7 +368,16 @@
         private MISDBDataSet8 mISDBDataSet8;
         private System.Windows.Forms.BindingSource sPFollowUpBindingSource;
         private MISDBDataSet8TableAdapters.SP_FollowUpTableAdapter sP_FollowUpTableAdapter;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblCheck;
+        private MISDBDataSet16 mISDBDataSet16;
+        private System.Windows.Forms.BindingSource dailyFollowUpInfoBindingSource;
+        private MISDBDataSet16TableAdapters.DailyFollowUpInfoTableAdapter dailyFollowUpInfoTableAdapter;
+        private MISDBDataSet17 mISDBDataSet17;
+        private System.Windows.Forms.BindingSource sPDailyFollowupCheckBindingSource;
+        private MISDBDataSet17TableAdapters.SP_Daily_Followup_CheckTableAdapter sP_Daily_Followup_CheckTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn F_Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FollowUp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fCheckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remarkDataGridViewTextBoxColumn;
     }
 }

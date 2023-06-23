@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="MISDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DailyFollowUpInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="F_Id" Type="int" />
+    <Property Name="F_Check" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="F_Date" Type="date" />
+  </EntityType>
   <EntityType Name="FollowUpTable">
     <Key>
       <PropertyRef Name="Id" />
@@ -39,6 +49,18 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <Association Name="FK_DailyFollowUpInfo_FollowUpTable">
+    <End Role="FollowUpTable" Type="Self.FollowUpTable" Multiplicity="0..1" />
+    <End Role="DailyFollowUpInfo" Type="Self.DailyFollowUpInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FollowUpTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DailyFollowUpInfo">
+        <PropertyRef Name="F_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_FollowUpTable_PurposeInfo">
     <End Role="PurposeInfo" Type="Self.PurposeInfo" Multiplicity="0..1" />
     <End Role="FollowUpTable" Type="Self.FollowUpTable" Multiplicity="*" />
@@ -103,10 +125,15 @@
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="MISDBModelStoreContainer">
+    <EntitySet Name="DailyFollowUpInfo" EntityType="Self.DailyFollowUpInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FollowUpTable" EntityType="Self.FollowUpTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GiveAndReciveDeailTable" EntityType="Self.GiveAndReciveDeailTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PurposeInfo" EntityType="Self.PurposeInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DailyFollowUpInfo_FollowUpTable" Association="Self.FK_DailyFollowUpInfo_FollowUpTable">
+      <End Role="FollowUpTable" EntitySet="FollowUpTable" />
+      <End Role="DailyFollowUpInfo" EntitySet="DailyFollowUpInfo" />
+    </AssociationSet>
     <AssociationSet Name="FK_FollowUpTable_PurposeInfo" Association="Self.FK_FollowUpTable_PurposeInfo">
       <End Role="PurposeInfo" EntitySet="PurposeInfo" />
       <End Role="FollowUpTable" EntitySet="FollowUpTable" />

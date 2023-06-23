@@ -73,8 +73,8 @@
             // 
             this.userToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.followUpIteamToolStripMenuItem,
-            this.followUpReportToolStripMenuItem,
-            this.reportCheckYesNoToolStripMenuItem});
+            this.reportCheckYesNoToolStripMenuItem,
+            this.followUpReportToolStripMenuItem});
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
             this.userToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
             this.userToolStripMenuItem.Text = "Follow Up";

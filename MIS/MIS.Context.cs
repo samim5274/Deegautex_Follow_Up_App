@@ -35,6 +35,8 @@ public partial class MISDBEntities : DbContext
     }
 
 
+    public virtual DbSet<DailyFollowUpInfo> DailyFollowUpInfoes { get; set; }
+
     public virtual DbSet<FollowUpTable> FollowUpTables { get; set; }
 
     public virtual DbSet<GiveAndReciveDeailTable> GiveAndReciveDeailTables { get; set; }
