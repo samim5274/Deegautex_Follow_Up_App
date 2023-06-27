@@ -37,6 +37,26 @@
           <Property Name="MoneyType" Type="int" />
           <Property Name="Money" Type="int" />
         </EntityType>
+        <EntityType Name="PersonInfoTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="P_Name" Type="varchar" MaxLength="200" />
+          <Property Name="P_PostId" Type="int" />
+          <Property Name="P_Phone" Type="int" />
+          <Property Name="P_Brand" Type="varchar" MaxLength="200" />
+          <Property Name="P_DeviceSerial" Type="varchar" MaxLength="200" />
+          <Property Name="P_DeviceLocation" Type="varchar" MaxLength="200" />
+          <Property Name="P_Remark" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="PostInfoTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PostName" Type="varchar" MaxLength="200" />
+        </EntityType>
         <EntityType Name="PurposeInfo">
           <Key>
             <PropertyRef Name="PId" />
@@ -75,6 +95,18 @@
             </Principal>
             <Dependent Role="FollowUpTable">
               <PropertyRef Name="PId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonInfoTable_PostInfoTable">
+          <End Role="PostInfoTable" Type="Self.PostInfoTable" Multiplicity="0..1" />
+          <End Role="PersonInfoTable" Type="Self.PersonInfoTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostInfoTable">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonInfoTable">
+              <PropertyRef Name="P_PostId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -137,6 +169,8 @@
           <EntitySet Name="DailyFollowUpInfo" EntityType="Self.DailyFollowUpInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FollowUpTable" EntityType="Self.FollowUpTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GiveAndReciveDeailTable" EntityType="Self.GiveAndReciveDeailTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonInfoTable" EntityType="Self.PersonInfoTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PostInfoTable" EntityType="Self.PostInfoTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PurposeInfo" EntityType="Self.PurposeInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_DailyFollowUpInfo_FollowUpTable" Association="Self.FK_DailyFollowUpInfo_FollowUpTable">
@@ -146,6 +180,10 @@
           <AssociationSet Name="FK_FollowUpTable_PurposeInfo" Association="Self.FK_FollowUpTable_PurposeInfo">
             <End Role="PurposeInfo" EntitySet="PurposeInfo" />
             <End Role="FollowUpTable" EntitySet="FollowUpTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonInfoTable_PostInfoTable" Association="Self.FK_PersonInfoTable_PostInfoTable">
+            <End Role="PostInfoTable" EntitySet="PostInfoTable" />
+            <End Role="PersonInfoTable" EntitySet="PersonInfoTable" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -206,9 +244,15 @@
             <Parameter Name="EDate" Mode="In" Type="DateTime" />
             <Parameter Name="MType" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="SP_Daily_Followup_Check" ReturnType="Collection(MISDBModel.SP_Daily_Followup_Check_Result)" />
+          <FunctionImport Name="SP_Purpose_Wise_Fill_Follow_Item" ReturnType="Collection(MISDBModel.SP_Purpose_Wise_Fill_Follow_Item_Result)">
+          <Parameter Name="PID" Mode="In" Type="Int32" />
+          </FunctionImport>
           <EntitySet Name="DailyFollowUpInfoes" EntityType="MISDBModel.DailyFollowUpInfo" />
           <EntitySet Name="FollowUpTables" EntityType="MISDBModel.FollowUpTable" />
           <EntitySet Name="GiveAndReciveDeailTables" EntityType="MISDBModel.GiveAndReciveDeailTable" />
+          <EntitySet Name="PersonInfoTables" EntityType="MISDBModel.PersonInfoTable" />
+          <EntitySet Name="PostInfoTables" EntityType="MISDBModel.PostInfoTable" />
           <EntitySet Name="PurposeInfoes" EntityType="MISDBModel.PurposeInfo" />
           <EntitySet Name="sysdiagrams" EntityType="MISDBModel.sysdiagram" />
           <AssociationSet Name="FK_DailyFollowUpInfo_FollowUpTable" Association="MISDBModel.FK_DailyFollowUpInfo_FollowUpTable">
@@ -219,10 +263,10 @@
             <End Role="PurposeInfo" EntitySet="PurposeInfoes" />
             <End Role="FollowUpTable" EntitySet="FollowUpTables" />
           </AssociationSet>
-          <FunctionImport Name="SP_Daily_Followup_Check" ReturnType="Collection(MISDBModel.SP_Daily_Followup_Check_Result)" />
-          <FunctionImport Name="SP_Purpose_Wise_Fill_Follow_Item" ReturnType="Collection(MISDBModel.SP_Purpose_Wise_Fill_Follow_Item_Result)">
-            <Parameter Name="PID" Mode="In" Type="Int32" />
-          </FunctionImport>
+          <AssociationSet Name="FK_PersonInfoTable_PostInfoTable" Association="MISDBModel.FK_PersonInfoTable_PostInfoTable">
+            <End Role="PostInfoTable" EntitySet="PostInfoTables" />
+            <End Role="PersonInfoTable" EntitySet="PersonInfoTables" />
+          </AssociationSet>
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -291,6 +335,16 @@
           <Property Type="String" Name="Type" Nullable="false" MaxLength="8" />
           <Property Type="Int32" Name="Money" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="SP_Daily_Followup_Check_Result">
+          <Property Type="DateTime" Name="F_Date" Nullable="true" />
+          <Property Type="String" Name="FollowUp" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="F_Check" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="SP_Purpose_Wise_Fill_Follow_Item_Result">
+          <Property Type="String" Name="FollowUp" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="PId" Nullable="true" />
+        </ComplexType>
         <EntityType Name="DailyFollowUpInfo">
           <Key>
             <PropertyRef Name="Id" />
@@ -325,6 +379,28 @@
           <Property Name="Reson" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="MoneyType" Type="Int32" />
           <Property Name="Money" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PersonInfoTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="P_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="P_PostId" Type="Int32" />
+          <Property Name="P_Phone" Type="Int32" />
+          <Property Name="P_Brand" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="P_DeviceSerial" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="P_DeviceLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="P_Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PostInfoTable" Relationship="MISDBModel.FK_PersonInfoTable_PostInfoTable" FromRole="PersonInfoTable" ToRole="PostInfoTable" />
+        </EntityType>
+        <EntityType Name="PostInfoTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PostName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PersonInfoTables" Relationship="MISDBModel.FK_PersonInfoTable_PostInfoTable" FromRole="PostInfoTable" ToRole="PersonInfoTable" />
         </EntityType>
         <EntityType Name="PurposeInfo">
           <Key>
@@ -368,16 +444,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="SP_Daily_Followup_Check_Result">
-          <Property Type="DateTime" Name="F_Date" Nullable="true" />
-          <Property Type="String" Name="FollowUp" Nullable="true" MaxLength="200" />
-          <Property Type="String" Name="F_Check" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Remark" Nullable="true" MaxLength="200" />
-        </ComplexType>
-        <ComplexType Name="SP_Purpose_Wise_Fill_Follow_Item_Result">
-          <Property Type="String" Name="FollowUp" Nullable="true" MaxLength="200" />
-          <Property Type="Int32" Name="PId" Nullable="true" />
-        </ComplexType>
+        <Association Name="FK_PersonInfoTable_PostInfoTable">
+          <End Type="MISDBModel.PostInfoTable" Role="PostInfoTable" Multiplicity="0..1" />
+          <End Type="MISDBModel.PersonInfoTable" Role="PersonInfoTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostInfoTable">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonInfoTable">
+              <PropertyRef Name="P_PostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -486,6 +564,24 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Daily_Followup_Check" FunctionName="MISDBModel.Store.SP_Daily_Followup_Check">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MISDBModel.SP_Daily_Followup_Check_Result">
+                <ScalarProperty Name="F_Date" ColumnName="F_Date" />
+                <ScalarProperty Name="FollowUp" ColumnName="FollowUp" />
+                <ScalarProperty Name="F_Check" ColumnName="F_Check" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Purpose_Wise_Fill_Follow_Item" FunctionName="MISDBModel.Store.SP_Purpose_Wise_Fill_Follow_Item">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MISDBModel.SP_Purpose_Wise_Fill_Follow_Item_Result">
+                <ScalarProperty Name="FollowUp" ColumnName="FollowUp" />
+                <ScalarProperty Name="PId" ColumnName="PId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <EntitySetMapping Name="DailyFollowUpInfoes">
             <EntityTypeMapping TypeName="MISDBModel.DailyFollowUpInfo">
               <MappingFragment StoreEntitySet="DailyFollowUpInfo">
@@ -521,6 +617,28 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PersonInfoTables">
+            <EntityTypeMapping TypeName="MISDBModel.PersonInfoTable">
+              <MappingFragment StoreEntitySet="PersonInfoTable">
+                <ScalarProperty Name="P_Remark" ColumnName="P_Remark" />
+                <ScalarProperty Name="P_DeviceLocation" ColumnName="P_DeviceLocation" />
+                <ScalarProperty Name="P_DeviceSerial" ColumnName="P_DeviceSerial" />
+                <ScalarProperty Name="P_Brand" ColumnName="P_Brand" />
+                <ScalarProperty Name="P_Phone" ColumnName="P_Phone" />
+                <ScalarProperty Name="P_PostId" ColumnName="P_PostId" />
+                <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostInfoTables">
+            <EntityTypeMapping TypeName="MISDBModel.PostInfoTable">
+              <MappingFragment StoreEntitySet="PostInfoTable">
+                <ScalarProperty Name="PostName" ColumnName="PostName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="PurposeInfoes">
             <EntityTypeMapping TypeName="MISDBModel.PurposeInfo">
               <MappingFragment StoreEntitySet="PurposeInfo">
@@ -540,24 +658,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_Daily_Followup_Check" FunctionName="MISDBModel.Store.SP_Daily_Followup_Check">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="MISDBModel.SP_Daily_Followup_Check_Result">
-                <ScalarProperty Name="F_Date" ColumnName="F_Date" />
-                <ScalarProperty Name="FollowUp" ColumnName="FollowUp" />
-                <ScalarProperty Name="F_Check" ColumnName="F_Check" />
-                <ScalarProperty Name="Remark" ColumnName="Remark" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_Purpose_Wise_Fill_Follow_Item" FunctionName="MISDBModel.Store.SP_Purpose_Wise_Fill_Follow_Item">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="MISDBModel.SP_Purpose_Wise_Fill_Follow_Item_Result">
-                <ScalarProperty Name="FollowUp" ColumnName="FollowUp" />
-                <ScalarProperty Name="PId" ColumnName="PId" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

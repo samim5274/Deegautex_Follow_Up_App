@@ -68,5 +68,12 @@ namespace MIS
             obj.MdiParent = this;
             obj.Show();
         }
+
+        private void createNewMemberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var obj = new PersonInfoForm();
+            obj.MdiParent = this;
+            obj.Show();
+        }
     }
 }

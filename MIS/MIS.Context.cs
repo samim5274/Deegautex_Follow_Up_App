@@ -41,6 +41,10 @@ public partial class MISDBEntities : DbContext
 
     public virtual DbSet<GiveAndReciveDeailTable> GiveAndReciveDeailTables { get; set; }
 
+    public virtual DbSet<PersonInfoTable> PersonInfoTables { get; set; }
+
+    public virtual DbSet<PostInfoTable> PostInfoTables { get; set; }
+
     public virtual DbSet<PurposeInfo> PurposeInfoes { get; set; }
 
     public virtual DbSet<sysdiagram> sysdiagrams { get; set; }

@@ -37,7 +37,7 @@
             // 
             this.cbxPurpose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPurpose.FormattingEnabled = true;
-            this.cbxPurpose.Location = new System.Drawing.Point(348, 85);
+            this.cbxPurpose.Location = new System.Drawing.Point(339, 85);
             this.cbxPurpose.Name = "cbxPurpose";
             this.cbxPurpose.Size = new System.Drawing.Size(228, 33);
             this.cbxPurpose.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             this.cbxFollowUpItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxFollowUpItem.FormattingEnabled = true;
-            this.cbxFollowUpItem.Location = new System.Drawing.Point(348, 230);
+            this.cbxFollowUpItem.Location = new System.Drawing.Point(339, 207);
             this.cbxFollowUpItem.Name = "cbxFollowUpItem";
             this.cbxFollowUpItem.Size = new System.Drawing.Size(228, 33);
             this.cbxFollowUpItem.TabIndex = 1;
@@ -55,7 +55,7 @@
             // btnFill
             // 
             this.btnFill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFill.Location = new System.Drawing.Point(375, 146);
+            this.btnFill.Location = new System.Drawing.Point(367, 137);
             this.btnFill.Name = "btnFill";
             this.btnFill.Size = new System.Drawing.Size(172, 52);
             this.btnFill.TabIndex = 2;

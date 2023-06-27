@@ -32,6 +32,26 @@
     <Property Name="MoneyType" Type="int" />
     <Property Name="Money" Type="int" />
   </EntityType>
+  <EntityType Name="PersonInfoTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="P_Name" Type="varchar" MaxLength="200" />
+    <Property Name="P_PostId" Type="int" />
+    <Property Name="P_Phone" Type="int" />
+    <Property Name="P_Brand" Type="varchar" MaxLength="200" />
+    <Property Name="P_DeviceSerial" Type="varchar" MaxLength="200" />
+    <Property Name="P_DeviceLocation" Type="varchar" MaxLength="200" />
+    <Property Name="P_Remark" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="PostInfoTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostName" Type="varchar" MaxLength="200" />
+  </EntityType>
   <EntityType Name="PurposeInfo">
     <Key>
       <PropertyRef Name="PId" />
@@ -70,6 +90,18 @@
       </Principal>
       <Dependent Role="FollowUpTable">
         <PropertyRef Name="PId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonInfoTable_PostInfoTable">
+    <End Role="PostInfoTable" Type="Self.PostInfoTable" Multiplicity="0..1" />
+    <End Role="PersonInfoTable" Type="Self.PersonInfoTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostInfoTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonInfoTable">
+        <PropertyRef Name="P_PostId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -132,6 +164,8 @@
     <EntitySet Name="DailyFollowUpInfo" EntityType="Self.DailyFollowUpInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FollowUpTable" EntityType="Self.FollowUpTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GiveAndReciveDeailTable" EntityType="Self.GiveAndReciveDeailTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonInfoTable" EntityType="Self.PersonInfoTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PostInfoTable" EntityType="Self.PostInfoTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PurposeInfo" EntityType="Self.PurposeInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_DailyFollowUpInfo_FollowUpTable" Association="Self.FK_DailyFollowUpInfo_FollowUpTable">
@@ -141,6 +175,10 @@
     <AssociationSet Name="FK_FollowUpTable_PurposeInfo" Association="Self.FK_FollowUpTable_PurposeInfo">
       <End Role="PurposeInfo" EntitySet="PurposeInfo" />
       <End Role="FollowUpTable" EntitySet="FollowUpTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonInfoTable_PostInfoTable" Association="Self.FK_PersonInfoTable_PostInfoTable">
+      <End Role="PostInfoTable" EntitySet="PostInfoTable" />
+      <End Role="PersonInfoTable" EntitySet="PersonInfoTable" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

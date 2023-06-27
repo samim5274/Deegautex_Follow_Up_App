@@ -73,5 +73,12 @@ namespace MIS
             var q = from m in obj.GiveAndReciveDeailTables select m;
             return q.ToList();
         }
+
+        internal object FillAllPost()
+        {
+            var obj = new MISDBEntities();
+            var q = from p in obj.PostInfoTables select p;
+            return q.ToList();
+        }
     }
 }

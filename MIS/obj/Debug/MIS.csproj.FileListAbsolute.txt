@@ -50,3 +50,4 @@ F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.MoneyTyp
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.DayAndMoneyTypeWiseReportForm.resources
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.csprojResolveAssemblyReference.cache
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.PurposeWiseFollowUpItemFillForm.resources
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.PersonInfoForm.resources
