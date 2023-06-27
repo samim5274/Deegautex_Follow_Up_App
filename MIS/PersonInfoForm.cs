@@ -104,9 +104,10 @@ namespace MIS
 
         private void PersonInfoForm_Load(object sender, EventArgs e)
         {
-            FillPost();
             ClearText();
+            FillPost();       
         }
+        
 
         private void FillPost()
         {
@@ -194,8 +195,10 @@ namespace MIS
             var db = new MISDBEntities();
 
             var selector = db.PersonInfoTables.Where(a => a.Id.ToString() == txtSearch.Text.Trim()).FirstOrDefault();
+            
 
             db.PersonInfoTables.Remove(selector);
+            db.SaveChanges();
             ClearText();
             btnSave.Enabled = false;
             btnSearch.Enabled = false;

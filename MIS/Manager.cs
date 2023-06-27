@@ -80,5 +80,6 @@ namespace MIS
             var q = from p in obj.PostInfoTables select p;
             return q.ToList();
         }
+        
     }
 }
