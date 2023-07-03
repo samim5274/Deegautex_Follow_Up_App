@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.followUpIteamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportCheckYesNoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +44,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createNewMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +71,13 @@
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(69, 26);
             this.homeToolStripMenuItem.Text = "Home";
+            // 
+            // createNewMemberToolStripMenuItem
+            // 
+            this.createNewMemberToolStripMenuItem.Name = "createNewMemberToolStripMenuItem";
+            this.createNewMemberToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
+            this.createNewMemberToolStripMenuItem.Text = "Create New Member";
+            this.createNewMemberToolStripMenuItem.Click += new System.EventHandler(this.createNewMemberToolStripMenuItem_Click);
             // 
             // userToolStripMenuItem
             // 
@@ -131,6 +138,7 @@
             // 
             // moneyTypeWiseReportToolStripMenuItem
             // 
+            this.moneyTypeWiseReportToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.moneyTypeWiseReportToolStripMenuItem.Name = "moneyTypeWiseReportToolStripMenuItem";
             this.moneyTypeWiseReportToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
             this.moneyTypeWiseReportToolStripMenuItem.Text = "Money Type Wise Report";
@@ -145,9 +153,10 @@
             // 
             // dayWiseTransectionReportToolStripMenuItem1
             // 
+            this.dayWiseTransectionReportToolStripMenuItem1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.dayWiseTransectionReportToolStripMenuItem1.Name = "dayWiseTransectionReportToolStripMenuItem1";
             this.dayWiseTransectionReportToolStripMenuItem1.Size = new System.Drawing.Size(362, 26);
-            this.dayWiseTransectionReportToolStripMenuItem1.Text = "Day Wise transection report";
+            this.dayWiseTransectionReportToolStripMenuItem1.Text = "Day Wise Transection Report";
             this.dayWiseTransectionReportToolStripMenuItem1.Click += new System.EventHandler(this.dayWiseTransectionReportToolStripMenuItem1_Click);
             // 
             // aboutToolStripMenuItem
@@ -167,13 +176,6 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
             this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // createNewMemberToolStripMenuItem
-            // 
-            this.createNewMemberToolStripMenuItem.Name = "createNewMemberToolStripMenuItem";
-            this.createNewMemberToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
-            this.createNewMemberToolStripMenuItem.Text = "Create New Member";
-            this.createNewMemberToolStripMenuItem.Click += new System.EventHandler(this.createNewMemberToolStripMenuItem_Click);
             // 
             // MotherForm
             // 
