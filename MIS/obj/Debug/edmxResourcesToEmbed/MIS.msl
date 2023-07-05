@@ -186,6 +186,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Revinews">
+      <EntityTypeMapping TypeName="MISDBModel.Revinew">
+        <MappingFragment StoreEntitySet="Revinew">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="MISDBModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">

@@ -47,6 +47,8 @@ public partial class MISDBEntities : DbContext
 
     public virtual DbSet<PurposeInfo> PurposeInfoes { get; set; }
 
+    public virtual DbSet<Revinew> Revinews { get; set; }
+
     public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
 

@@ -51,3 +51,13 @@ F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.DayAndMo
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.PurposeWiseFollowUpItemFillForm.resources
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.PersonInfoForm.resources
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.csprojResolveAssemblyReference.cache
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.AnalysisForm.resources
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\LiveCharts.dll
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\LiveCharts.WinForms.dll
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\LiveCharts.Wpf.dll
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\LiveCharts.pdb
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\LiveCharts.xml
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\LiveCharts.WinForms.pdb
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\LiveCharts.WinForms.xml
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\LiveCharts.Wpf.pdb
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\LiveCharts.Wpf.xml

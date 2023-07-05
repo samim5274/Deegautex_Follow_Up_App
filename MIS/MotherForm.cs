@@ -75,5 +75,12 @@ namespace MIS
             obj.MdiParent = this;
             obj.Show();
         }
+
+        private void analysisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var obj = new AnalysisForm();
+            obj.MdiParent = this;
+            obj.Show();
+        }
     }
 }

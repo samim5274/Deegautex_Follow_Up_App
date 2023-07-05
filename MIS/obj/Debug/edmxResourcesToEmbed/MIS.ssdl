@@ -59,6 +59,13 @@
     <Property Name="PId" Type="int" Nullable="false" />
     <Property Name="Purpose" Type="varchar" MaxLength="200" />
   </EntityType>
+  <EntityType Name="Revinew">
+    <Key>
+      <PropertyRef Name="Year" />
+    </Key>
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -167,6 +174,7 @@
     <EntitySet Name="PersonInfoTable" EntityType="Self.PersonInfoTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PostInfoTable" EntityType="Self.PostInfoTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PurposeInfo" EntityType="Self.PurposeInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Revinew" EntityType="Self.Revinew" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_DailyFollowUpInfo_FollowUpTable" Association="Self.FK_DailyFollowUpInfo_FollowUpTable">
       <End Role="FollowUpTable" EntitySet="FollowUpTable" />

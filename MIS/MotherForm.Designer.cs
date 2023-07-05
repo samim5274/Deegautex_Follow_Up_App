@@ -41,6 +41,7 @@
             this.moneyTypeWiseReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dayAndMoneyTypeWiseReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dayWiseTransectionReportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.analysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,7 +115,8 @@
             // 
             this.transectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.giverAndReciveToolStripMenuItem,
-            this.reportToolStripMenuItem});
+            this.reportToolStripMenuItem,
+            this.analysisToolStripMenuItem});
             this.transectionToolStripMenuItem.Name = "transectionToolStripMenuItem";
             this.transectionToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.transectionToolStripMenuItem.Text = "Transection";
@@ -158,6 +160,13 @@
             this.dayWiseTransectionReportToolStripMenuItem1.Size = new System.Drawing.Size(362, 26);
             this.dayWiseTransectionReportToolStripMenuItem1.Text = "Day Wise Transection Report";
             this.dayWiseTransectionReportToolStripMenuItem1.Click += new System.EventHandler(this.dayWiseTransectionReportToolStripMenuItem1_Click);
+            // 
+            // analysisToolStripMenuItem
+            // 
+            this.analysisToolStripMenuItem.Name = "analysisToolStripMenuItem";
+            this.analysisToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.analysisToolStripMenuItem.Text = "Analysis";
+            this.analysisToolStripMenuItem.Click += new System.EventHandler(this.analysisToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -214,6 +223,7 @@
         private System.Windows.Forms.ToolStripMenuItem dayAndMoneyTypeWiseReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dayWiseTransectionReportToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem createNewMemberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem analysisToolStripMenuItem;
     }
 }
 

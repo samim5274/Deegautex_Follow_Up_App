@@ -64,6 +64,7 @@
     <EntitySet Name="PersonInfoTables" EntityType="MISDBModel.PersonInfoTable" />
     <EntitySet Name="PostInfoTables" EntityType="MISDBModel.PostInfoTable" />
     <EntitySet Name="PurposeInfoes" EntityType="MISDBModel.PurposeInfo" />
+    <EntitySet Name="Revinews" EntityType="MISDBModel.Revinew" />
     <EntitySet Name="sysdiagrams" EntityType="MISDBModel.sysdiagram" />
     <AssociationSet Name="FK_DailyFollowUpInfo_FollowUpTable" Association="MISDBModel.FK_DailyFollowUpInfo_FollowUpTable">
       <End Role="FollowUpTable" EntitySet="FollowUpTables" />
@@ -219,6 +220,13 @@
     <Property Name="PId" Type="Int32" Nullable="false" />
     <Property Name="Purpose" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="FollowUpTables" Relationship="MISDBModel.FK_FollowUpTable_PurposeInfo" FromRole="PurposeInfo" ToRole="FollowUpTable" />
+  </EntityType>
+  <EntityType Name="Revinew">
+    <Key>
+      <PropertyRef Name="Year" />
+    </Key>
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
