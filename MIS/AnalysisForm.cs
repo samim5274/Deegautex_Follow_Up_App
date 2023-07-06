@@ -19,34 +19,36 @@ namespace MIS
         List<double> x1Value = new List<double>();
         List<double> y1Value = new List<double>();
 
-        //List<DateTime> xValue = new List<DateTime>();
+        //List<DateTime> xTValue = new List<DateTime>();
         //List<double> yValue = new List<double>();
         public AnalysisForm()
         {
             InitializeComponent();
 
 
-            //xValue.Add(new DateTime(2016, 4, 4, 13, 2, 0));
+            //xTValue.Add(new DateTime(2016, 1, 1, 10, 0, 0));
             //yValue.Add(1);
 
-            //xValue.Add(new DateTime(2016, 4, 4, 13, 12, 0));
+            //xTValue.Add(new DateTime(2017, 4, 4, 13, 12, 0));
             //yValue.Add(3);
 
-            //xValue.Add(new DateTime(2016, 4, 4, 13, 45, 0));
-            //yValue.Add(3.5);
+            //xTValue.Add(new DateTime(2018, 4, 4, 13, 45, 0));
+            //yValue.Add(5);
+            
 
         }
 
         private void AnalysisForm_Load(object sender, EventArgs e)
         {
-            //chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.Red;
-            //chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.Red;
-            //chart1.Series["Series1"].Color = Color.Green;
-            //chart1.ChartAreas[0].AxisX.Interval = 5.0;
-            //chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Minutes;
-            //chart1.ChartAreas[0].AxisX.LabelStyle.Format = "HH:MM:SS";
-            //chart1.Series["Income"].Points.DataBindXY(xValue, yValue);
-            //chart1.Series["Expenses"].Points.DataBindXY(x1Value, y1Value);
+            //chart2.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.Red;
+            //chart2.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.Green;
+            //chart2.Series["Series1"].Color = Color.Red;
+            //chart2.Series["Series2"].Color = Color.Blue;
+            //chart2.ChartAreas[0].AxisX.Interval = 5.0;
+            //chart2.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Minutes;
+            //chart2.ChartAreas[0].AxisX.LabelStyle.Format = "HH:MM:ss";
+            //chart2.Series["Series1"].Points.DataBindXY(xValue, yValue);
+            //chart2.Series["Series2"].Points.DataBindXY(x1Value, y1Value);
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
