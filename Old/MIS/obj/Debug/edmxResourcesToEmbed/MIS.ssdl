@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MISDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DailyFollowUpInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="F_Id" Type="int" />
+    <Property Name="F_Check" Type="varchar" MaxLength="50" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="F_Date" Type="date" />
+  </EntityType>
+  <EntityType Name="FollowUpTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FollowUp" Type="varchar" MaxLength="200" />
+    <Property Name="Remark" Type="varchar" MaxLength="500" />
+    <Property Name="PId" Type="int" />
+  </EntityType>
+  <EntityType Name="GiveAndReciveDeailTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="date" />
+    <Property Name="GiverName" Type="varchar" MaxLength="100" />
+    <Property Name="ReciverName" Type="varchar" MaxLength="100" />
+    <Property Name="Time" Type="varchar" MaxLength="50" />
+    <Property Name="Reson" Type="varchar" MaxLength="150" />
+    <Property Name="MoneyType" Type="int" />
+    <Property Name="Money" Type="int" />
+  </EntityType>
+  <EntityType Name="PersonInfoTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="P_Name" Type="varchar" MaxLength="200" />
+    <Property Name="P_PostId" Type="int" />
+    <Property Name="P_Phone" Type="int" />
+    <Property Name="P_Brand" Type="varchar" MaxLength="200" />
+    <Property Name="P_DeviceSerial" Type="varchar" MaxLength="200" />
+    <Property Name="P_DeviceLocation" Type="varchar" MaxLength="200" />
+    <Property Name="P_Remark" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="PostInfoTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="PurposeInfo">
+    <Key>
+      <PropertyRef Name="PId" />
+    </Key>
+    <Property Name="PId" Type="int" Nullable="false" />
+    <Property Name="Purpose" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Revinew">
+    <Key>
+      <PropertyRef Name="Year" />
+    </Key>
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_DailyFollowUpInfo_FollowUpTable">
+    <End Role="FollowUpTable" Type="Self.FollowUpTable" Multiplicity="0..1" />
+    <End Role="DailyFollowUpInfo" Type="Self.DailyFollowUpInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FollowUpTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DailyFollowUpInfo">
+        <PropertyRef Name="F_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FollowUpTable_PurposeInfo">
+    <End Role="PurposeInfo" Type="Self.PurposeInfo" Multiplicity="0..1" />
+    <End Role="FollowUpTable" Type="Self.FollowUpTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurposeInfo">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="FollowUpTable">
+        <PropertyRef Name="PId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonInfoTable_PostInfoTable">
+    <End Role="PostInfoTable" Type="Self.PostInfoTable" Multiplicity="0..1" />
+    <End Role="PersonInfoTable" Type="Self.PersonInfoTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostInfoTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonInfoTable">
+        <PropertyRef Name="P_PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="SP_Daily_Followup_Check" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_Day_And_MoneyType_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SDate" Type="date" Mode="In" />
+    <Parameter Name="EDate" Type="date" Mode="In" />
+    <Parameter Name="MType" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DAY_WISE_MONEY_REPORT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SDate" Type="date" Mode="In" />
+    <Parameter Name="EDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Follow_Up_Item" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_FollowUp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_MoneyType_Wise_Transection_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MType" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Purpose_Wise_Fill_Follow_Item" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Purpose_Wise_Follow_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PopId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="MISDBModelStoreContainer">
+    <EntitySet Name="DailyFollowUpInfo" EntityType="Self.DailyFollowUpInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FollowUpTable" EntityType="Self.FollowUpTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GiveAndReciveDeailTable" EntityType="Self.GiveAndReciveDeailTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonInfoTable" EntityType="Self.PersonInfoTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PostInfoTable" EntityType="Self.PostInfoTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PurposeInfo" EntityType="Self.PurposeInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Revinew" EntityType="Self.Revinew" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DailyFollowUpInfo_FollowUpTable" Association="Self.FK_DailyFollowUpInfo_FollowUpTable">
+      <End Role="FollowUpTable" EntitySet="FollowUpTable" />
+      <End Role="DailyFollowUpInfo" EntitySet="DailyFollowUpInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FollowUpTable_PurposeInfo" Association="Self.FK_FollowUpTable_PurposeInfo">
+      <End Role="PurposeInfo" EntitySet="PurposeInfo" />
+      <End Role="FollowUpTable" EntitySet="FollowUpTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonInfoTable_PostInfoTable" Association="Self.FK_PersonInfoTable_PostInfoTable">
+      <End Role="PostInfoTable" EntitySet="PostInfoTable" />
+      <End Role="PersonInfoTable" EntitySet="PersonInfoTable" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
