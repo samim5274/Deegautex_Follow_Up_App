@@ -1,0 +1,607 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF1E3885-9225-4BC8-BB79-2986D2B1DBA1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MIS</RootNamespace>
+    <AssemblyName>MIS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalysisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalysisForm.Designer.cs">
+      <DependentUpon>AnalysisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyFollowUpInfo.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DayAndMoneyTypeWiseReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayAndMoneyTypeWiseReportForm.Designer.cs">
+      <DependentUpon>DayAndMoneyTypeWiseReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DayWiseMoneyReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayWiseMoneyReportForm.Designer.cs">
+      <DependentUpon>DayWiseMoneyReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FollowUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FollowUpForm.Designer.cs">
+      <DependentUpon>FollowUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FollowUpTable.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FollowUpWiseReportFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FollowUpWiseReportFrom.Designer.cs">
+      <DependentUpon>FollowUpWiseReportFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiveAndReciveDeailTable.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiveAndReciveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiveAndReciveForm.Designer.cs">
+      <DependentUpon>GiveAndReciveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs" />
+    <Compile Include="MIS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MIS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MIS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MIS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MIS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDBDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MoneyTypeWiseReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoneyTypeWiseReport.Designer.cs">
+      <DependentUpon>MoneyTypeWiseReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MotherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MotherForm.Designer.cs">
+      <DependentUpon>MotherForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonInfoForm.Designer.cs">
+      <DependentUpon>PersonInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonInfoTable.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostInfoTable.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurposeInfo.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurposeWiseFollowUpItemFillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurposeWiseFollowUpItemFillForm.Designer.cs">
+      <DependentUpon>PurposeWiseFollowUpItemFillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportCheckForm.Designer.cs">
+      <DependentUpon>ReportCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Revinew.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Daily_Followup_Check_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Day_And_MoneyType_Report_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_DAY_WISE_MONEY_REPORT_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_FollowUp_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Follow_Up_Item_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_MoneyType_Wise_Transection_Report_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Purpose_Wise_Fill_Follow_Item_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Purpose_Wise_Follow_Report_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Purpose_Wise_Report_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Report_Result.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnalysisForm.resx">
+      <DependentUpon>AnalysisForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayAndMoneyTypeWiseReportForm.resx">
+      <DependentUpon>DayAndMoneyTypeWiseReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayWiseMoneyReportForm.resx">
+      <DependentUpon>DayWiseMoneyReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FollowUpForm.resx">
+      <DependentUpon>FollowUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FollowUpWiseReportFrom.resx">
+      <DependentUpon>FollowUpWiseReportFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiveAndReciveForm.resx">
+      <DependentUpon>GiveAndReciveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoneyTypeWiseReport.resx">
+      <DependentUpon>MoneyTypeWiseReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MotherForm.resx">
+      <DependentUpon>MotherForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonInfoForm.resx">
+      <DependentUpon>PersonInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PurposeWiseFollowUpItemFillForm.resx">
+      <DependentUpon>PurposeWiseFollowUpItemFillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportCheckForm.resx">
+      <DependentUpon>ReportCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="MIS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MIS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MIS.edmx.diagram">
+      <DependentUpon>MIS.edmx</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet.xsc">
+      <DependentUpon>MISDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet.xss">
+      <DependentUpon>MISDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet1.xsc">
+      <DependentUpon>MISDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet1.xss">
+      <DependentUpon>MISDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet10.xsc">
+      <DependentUpon>MISDBDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet10.xss">
+      <DependentUpon>MISDBDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet11.xsc">
+      <DependentUpon>MISDBDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet11.xss">
+      <DependentUpon>MISDBDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet12.xsc">
+      <DependentUpon>MISDBDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet12.xss">
+      <DependentUpon>MISDBDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet13.xsc">
+      <DependentUpon>MISDBDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet13.xss">
+      <DependentUpon>MISDBDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet14.xsc">
+      <DependentUpon>MISDBDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet14.xss">
+      <DependentUpon>MISDBDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet15.xsc">
+      <DependentUpon>MISDBDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet15.xss">
+      <DependentUpon>MISDBDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet16.xsc">
+      <DependentUpon>MISDBDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet16.xss">
+      <DependentUpon>MISDBDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet17.xsc">
+      <DependentUpon>MISDBDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet17.xss">
+      <DependentUpon>MISDBDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet2.xsc">
+      <DependentUpon>MISDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet2.xss">
+      <DependentUpon>MISDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet3.xsc">
+      <DependentUpon>MISDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet3.xss">
+      <DependentUpon>MISDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet4.xsc">
+      <DependentUpon>MISDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet4.xss">
+      <DependentUpon>MISDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet5.xsc">
+      <DependentUpon>MISDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet5.xss">
+      <DependentUpon>MISDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet6.xsc">
+      <DependentUpon>MISDBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet6.xss">
+      <DependentUpon>MISDBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet7.xsc">
+      <DependentUpon>MISDBDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet7.xss">
+      <DependentUpon>MISDBDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet8.xsc">
+      <DependentUpon>MISDBDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet8.xss">
+      <DependentUpon>MISDBDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet9.xsc">
+      <DependentUpon>MISDBDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet9.xss">
+      <DependentUpon>MISDBDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MIS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MIS.edmx</DependentUpon>
+      <LastGenOutput>MIS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MIS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MIS.edmx</DependentUpon>
+      <LastGenOutput>MIS.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
