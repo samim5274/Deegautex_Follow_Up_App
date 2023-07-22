@@ -71,6 +71,8 @@
     <EntitySet Name="ProductDetails" EntityType="MISDBModel.ProductDetail" />
     <EntitySet Name="PurposeInfoes" EntityType="MISDBModel.PurposeInfo" />
     <EntitySet Name="Revinews" EntityType="MISDBModel.Revinew" />
+    <EntitySet Name="StockDetails" EntityType="MISDBModel.StockDetail" />
+    <EntitySet Name="StockOutDetails" EntityType="MISDBModel.StockOutDetail" />
     <EntitySet Name="sysdiagrams" EntityType="MISDBModel.sysdiagram" />
     <AssociationSet Name="FK_DailyFollowUpInfo_FollowUpTable" Association="MISDBModel.FK_DailyFollowUpInfo_FollowUpTable">
       <End Role="FollowUpTable" EntitySet="FollowUpTables" />
@@ -87,6 +89,14 @@
     <AssociationSet Name="FK_PersonInfoTable_PostInfoTable" Association="MISDBModel.FK_PersonInfoTable_PostInfoTable">
       <End Role="PostInfoTable" EntitySet="PostInfoTables" />
       <End Role="PersonInfoTable" EntitySet="PersonInfoTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockDetail_ProductDetail" Association="MISDBModel.FK_StockDetail_ProductDetail">
+      <End Role="ProductDetail" EntitySet="ProductDetails" />
+      <End Role="StockDetail" EntitySet="StockDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockOutDetail_ProductDetail" Association="MISDBModel.FK_StockOutDetail_ProductDetail">
+      <End Role="ProductDetail" EntitySet="ProductDetails" />
+      <End Role="StockOutDetail" EntitySet="StockOutDetails" />
     </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -246,6 +256,8 @@
     <Property Name="P_PurchasePrice" Type="Int32" />
     <Property Name="P_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="DepartmentInfo" Relationship="MISDBModel.FK_ProductDetail_DepartmentInfo" FromRole="ProductDetail" ToRole="DepartmentInfo" />
+    <NavigationProperty Name="StockDetails" Relationship="MISDBModel.FK_StockDetail_ProductDetail" FromRole="ProductDetail" ToRole="StockDetail" />
+    <NavigationProperty Name="StockOutDetails" Relationship="MISDBModel.FK_StockOutDetail_ProductDetail" FromRole="ProductDetail" ToRole="StockOutDetail" />
   </EntityType>
   <EntityType Name="PurposeInfo">
     <Key>
@@ -261,6 +273,30 @@
     </Key>
     <Property Name="Year" Type="Int32" Nullable="false" />
     <Property Name="Total" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="StockDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Reg" Type="Int32" Nullable="false" />
+    <Property Name="P_Id" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Qty" Type="Int32" />
+    <NavigationProperty Name="ProductDetail" Relationship="MISDBModel.FK_StockDetail_ProductDetail" FromRole="StockDetail" ToRole="ProductDetail" />
+  </EntityType>
+  <EntityType Name="StockOutDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Reg" Type="Int32" />
+    <Property Name="ReceiverName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="P_Id" Type="Int32" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProductDetail" Relationship="MISDBModel.FK_StockOutDetail_ProductDetail" FromRole="StockOutDetail" ToRole="ProductDetail" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -317,6 +353,30 @@
       </Principal>
       <Dependent Role="PersonInfoTable">
         <PropertyRef Name="P_PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockDetail_ProductDetail">
+    <End Type="MISDBModel.ProductDetail" Role="ProductDetail" Multiplicity="0..1" />
+    <End Type="MISDBModel.StockDetail" Role="StockDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StockDetail">
+        <PropertyRef Name="P_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockOutDetail_ProductDetail">
+    <End Type="MISDBModel.ProductDetail" Role="ProductDetail" Multiplicity="0..1" />
+    <End Type="MISDBModel.StockOutDetail" Role="StockOutDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StockOutDetail">
+        <PropertyRef Name="P_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

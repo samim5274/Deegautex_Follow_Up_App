@@ -83,6 +83,28 @@
     <Property Name="Year" Type="int" Nullable="false" />
     <Property Name="Total" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
+  <EntityType Name="StockDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reg" Type="int" Nullable="false" />
+    <Property Name="P_Id" Type="int" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Qty" Type="int" />
+  </EntityType>
+  <EntityType Name="StockOutDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reg" Type="int" />
+    <Property Name="ReceiverName" Type="varchar" MaxLength="200" />
+    <Property Name="P_Id" Type="int" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Remark" Type="varchar" MaxLength="500" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -138,6 +160,30 @@
       </Principal>
       <Dependent Role="ProductDetail">
         <PropertyRef Name="P_DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockDetail_ProductDetail">
+    <End Role="ProductDetail" Type="Self.ProductDetail" Multiplicity="0..1" />
+    <End Role="StockDetail" Type="Self.StockDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StockDetail">
+        <PropertyRef Name="P_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockOutDetail_ProductDetail">
+    <End Role="ProductDetail" Type="Self.ProductDetail" Multiplicity="0..1" />
+    <End Role="StockOutDetail" Type="Self.StockOutDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StockOutDetail">
+        <PropertyRef Name="P_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -210,6 +256,8 @@
     <EntitySet Name="ProductDetail" EntityType="Self.ProductDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PurposeInfo" EntityType="Self.PurposeInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Revinew" EntityType="Self.Revinew" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StockDetail" EntityType="Self.StockDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StockOutDetail" EntityType="Self.StockOutDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_DailyFollowUpInfo_FollowUpTable" Association="Self.FK_DailyFollowUpInfo_FollowUpTable">
       <End Role="FollowUpTable" EntitySet="FollowUpTable" />
@@ -226,6 +274,14 @@
     <AssociationSet Name="FK_ProductDetail_DepartmentInfo" Association="Self.FK_ProductDetail_DepartmentInfo">
       <End Role="DepartmentInfo" EntitySet="DepartmentInfo" />
       <End Role="ProductDetail" EntitySet="ProductDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockDetail_ProductDetail" Association="Self.FK_StockDetail_ProductDetail">
+      <End Role="ProductDetail" EntitySet="ProductDetail" />
+      <End Role="StockDetail" EntitySet="StockDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockOutDetail_ProductDetail" Association="Self.FK_StockOutDetail_ProductDetail">
+      <End Role="ProductDetail" EntitySet="ProductDetail" />
+      <End Role="StockOutDetail" EntitySet="StockOutDetail" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

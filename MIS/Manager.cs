@@ -25,6 +25,20 @@ namespace MIS
             return q.ToList();
         }
 
+        public List<ProductDetail> GetAllProduct()
+        {
+            var obj = new MISDBEntities();
+            var q = from p in obj.ProductDetails select p;
+            return q.ToList();
+        }
+
+        public List<StockDetail> GetAllStock()
+        {
+            var obj = new MISDBEntities();
+            var q = from p in obj.StockDetails select p;
+            return q.ToList();
+        }
+
         public List<DepartmentInfo> GetAllDepartment()
         {
             var context = new MISDBEntities();

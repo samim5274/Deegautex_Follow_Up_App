@@ -204,6 +204,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MISDBDataSet17.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MISDBDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDBDataSet18.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MISDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -330,6 +335,24 @@
     <Compile Include="SP_Report_Result.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
+    <Compile Include="StockDetail.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockDetailForm.Designer.cs">
+      <DependentUpon>StockDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockOutDetail.cs">
+      <DependentUpon>MIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockOutForm.Designer.cs">
+      <DependentUpon>StockOutForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>MIS.tt</DependentUpon>
     </Compile>
@@ -377,6 +400,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportCheckForm.resx">
       <DependentUpon>ReportCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockDetailForm.resx">
+      <DependentUpon>StockDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockOutForm.resx">
+      <DependentUpon>StockOutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="MIS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -494,6 +523,17 @@
     </None>
     <None Include="MISDBDataSet17.xss">
       <DependentUpon>MISDBDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet18.xsc">
+      <DependentUpon>MISDBDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="MISDBDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDBDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDBDataSet18.xss">
+      <DependentUpon>MISDBDataSet18.xsd</DependentUpon>
     </None>
     <None Include="MISDBDataSet2.xsc">
       <DependentUpon>MISDBDataSet2.xsd</DependentUpon>

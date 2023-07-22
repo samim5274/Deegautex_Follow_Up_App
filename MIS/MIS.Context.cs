@@ -53,6 +53,10 @@ public partial class MISDBEntities : DbContext
 
     public virtual DbSet<Revinew> Revinews { get; set; }
 
+    public virtual DbSet<StockDetail> StockDetails { get; set; }
+
+    public virtual DbSet<StockOutDetail> StockOutDetails { get; set; }
+
     public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
 

@@ -46,7 +46,7 @@ namespace MIS
             obj.MdiParent = this;
             obj.Show();
         }
-        
+
 
         private void moneyTypeWiseReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -86,6 +86,20 @@ namespace MIS
         private void createStoreProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var obj = new CreateStoreProductForm();
+            obj.MdiParent = this;
+            obj.Show();
+        }
+
+        private void storeStockInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var obj = new StockDetailForm();
+            obj.MdiParent = this;
+            obj.Show();
+        }
+
+        private void storeStockOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var obj = new StockOutForm();
             obj.MdiParent = this;
             obj.Show();
         }

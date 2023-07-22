@@ -222,6 +222,30 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="StockDetails">
+      <EntityTypeMapping TypeName="MISDBModel.StockDetail">
+        <MappingFragment StoreEntitySet="StockDetail">
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="P_Id" ColumnName="P_Id" />
+          <ScalarProperty Name="Reg" ColumnName="Reg" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockOutDetails">
+      <EntityTypeMapping TypeName="MISDBModel.StockOutDetail">
+        <MappingFragment StoreEntitySet="StockOutDetail">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="P_Id" ColumnName="P_Id" />
+          <ScalarProperty Name="ReceiverName" ColumnName="ReceiverName" />
+          <ScalarProperty Name="Reg" ColumnName="Reg" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="MISDBModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">

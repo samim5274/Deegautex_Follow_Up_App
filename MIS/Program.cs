@@ -16,7 +16,7 @@ namespace MIS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CreateStoreProductForm());
+            Application.Run(new StockOutForm());
         }
     }
 }

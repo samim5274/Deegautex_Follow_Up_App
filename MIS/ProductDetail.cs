@@ -18,6 +18,17 @@ using System;
 public partial class ProductDetail
 {
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public ProductDetail()
+    {
+
+        this.StockDetails = new HashSet<StockDetail>();
+
+        this.StockOutDetails = new HashSet<StockOutDetail>();
+
+    }
+
+
     public int Id { get; set; }
 
     public string P_Name { get; set; }
@@ -31,6 +42,14 @@ public partial class ProductDetail
 
 
     public virtual DepartmentInfo DepartmentInfo { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+    public virtual ICollection<StockDetail> StockDetails { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+    public virtual ICollection<StockOutDetail> StockOutDetails { get; set; }
 
 }
 
