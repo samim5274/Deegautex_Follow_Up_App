@@ -82,5 +82,12 @@ namespace MIS
             obj.MdiParent = this;
             obj.Show();
         }
+
+        private void createStoreProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var obj = new CreateStoreProductForm();
+            obj.MdiParent = this;
+            obj.Show();
+        }
     }
 }

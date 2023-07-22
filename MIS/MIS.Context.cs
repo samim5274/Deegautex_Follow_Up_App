@@ -37,6 +37,8 @@ public partial class MISDBEntities : DbContext
 
     public virtual DbSet<DailyFollowUpInfo> DailyFollowUpInfoes { get; set; }
 
+    public virtual DbSet<DepartmentInfo> DepartmentInfoes { get; set; }
+
     public virtual DbSet<FollowUpTable> FollowUpTables { get; set; }
 
     public virtual DbSet<GiveAndReciveDeailTable> GiveAndReciveDeailTables { get; set; }
@@ -44,6 +46,8 @@ public partial class MISDBEntities : DbContext
     public virtual DbSet<PersonInfoTable> PersonInfoTables { get; set; }
 
     public virtual DbSet<PostInfoTable> PostInfoTables { get; set; }
+
+    public virtual DbSet<ProductDetail> ProductDetails { get; set; }
 
     public virtual DbSet<PurposeInfo> PurposeInfoes { get; set; }
 
@@ -303,6 +307,23 @@ public partial class MISDBEntities : DbContext
 
 
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Purpose_Wise_Fill_Follow_Item_Result>("SP_Purpose_Wise_Fill_Follow_Item", pIDParameter);
+    }
+
+
+    public virtual ObjectResult<SP_7_Days_Data_Analysis_Result> SP_7_Days_Data_Analysis(Nullable<System.DateTime> sDATE, Nullable<int> tTYPE)
+    {
+
+        var sDATEParameter = sDATE.HasValue ?
+            new ObjectParameter("SDATE", sDATE) :
+            new ObjectParameter("SDATE", typeof(System.DateTime));
+
+
+        var tTYPEParameter = tTYPE.HasValue ?
+            new ObjectParameter("TTYPE", tTYPE) :
+            new ObjectParameter("TTYPE", typeof(int));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_7_Days_Data_Analysis_Result>("SP_7_Days_Data_Analysis", sDATEParameter, tTYPEParameter);
     }
 
 }

@@ -25,6 +25,14 @@ namespace MIS
             return q.ToList();
         }
 
+        public List<DepartmentInfo> GetAllDepartment()
+        {
+            var context = new MISDBEntities();
+            var q = from d in context.DepartmentInfoes select d;
+            return q.ToList(); 
+        }
+        
+
         internal List<SP_Report_Result> GetAllPurposeWiseReport(int pid)
         {
             var context = new MISDBEntities();

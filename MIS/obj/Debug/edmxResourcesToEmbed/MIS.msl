@@ -121,6 +121,15 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_7_Days_Data_Analysis" FunctionName="MISDBModel.Store.SP_7_Days_Data_Analysis">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MISDBModel.SP_7_Days_Data_Analysis_Result">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="MoneyType" ColumnName="MoneyType" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="DailyFollowUpInfoes">
       <EntityTypeMapping TypeName="MISDBModel.DailyFollowUpInfo">
         <MappingFragment StoreEntitySet="DailyFollowUpInfo">
@@ -128,6 +137,14 @@
           <ScalarProperty Name="Remark" ColumnName="Remark" />
           <ScalarProperty Name="F_Check" ColumnName="F_Check" />
           <ScalarProperty Name="F_Id" ColumnName="F_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepartmentInfoes">
+      <EntityTypeMapping TypeName="MISDBModel.DepartmentInfo">
+        <MappingFragment StoreEntitySet="DepartmentInfo">
+          <ScalarProperty Name="Dep_Name" ColumnName="Dep_Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -174,6 +191,17 @@
       <EntityTypeMapping TypeName="MISDBModel.PostInfoTable">
         <MappingFragment StoreEntitySet="PostInfoTable">
           <ScalarProperty Name="PostName" ColumnName="PostName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductDetails">
+      <EntityTypeMapping TypeName="MISDBModel.ProductDetail">
+        <MappingFragment StoreEntitySet="ProductDetail">
+          <ScalarProperty Name="P_Description" ColumnName="P_Description" />
+          <ScalarProperty Name="P_PurchasePrice" ColumnName="P_PurchasePrice" />
+          <ScalarProperty Name="P_DepartmentId" ColumnName="P_DepartmentId" />
+          <ScalarProperty Name="P_Name" ColumnName="P_Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

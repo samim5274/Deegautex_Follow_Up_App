@@ -61,3 +61,4 @@ F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\LiveCharts.W
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\LiveCharts.WinForms.xml
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\LiveCharts.Wpf.pdb
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\bin\Debug\LiveCharts.Wpf.xml
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.CreateStoreProductForm.resources

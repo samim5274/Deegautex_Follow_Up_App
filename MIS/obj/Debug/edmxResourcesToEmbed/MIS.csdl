@@ -58,17 +58,27 @@
     <FunctionImport Name="SP_Purpose_Wise_Fill_Follow_Item" ReturnType="Collection(MISDBModel.SP_Purpose_Wise_Fill_Follow_Item_Result)">
       <Parameter Name="PID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="SP_7_Days_Data_Analysis" ReturnType="Collection(MISDBModel.SP_7_Days_Data_Analysis_Result)">
+      <Parameter Name="SDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="TTYPE" Mode="In" Type="Int32" />
+    </FunctionImport>
     <EntitySet Name="DailyFollowUpInfoes" EntityType="MISDBModel.DailyFollowUpInfo" />
+    <EntitySet Name="DepartmentInfoes" EntityType="MISDBModel.DepartmentInfo" />
     <EntitySet Name="FollowUpTables" EntityType="MISDBModel.FollowUpTable" />
     <EntitySet Name="GiveAndReciveDeailTables" EntityType="MISDBModel.GiveAndReciveDeailTable" />
     <EntitySet Name="PersonInfoTables" EntityType="MISDBModel.PersonInfoTable" />
     <EntitySet Name="PostInfoTables" EntityType="MISDBModel.PostInfoTable" />
+    <EntitySet Name="ProductDetails" EntityType="MISDBModel.ProductDetail" />
     <EntitySet Name="PurposeInfoes" EntityType="MISDBModel.PurposeInfo" />
     <EntitySet Name="Revinews" EntityType="MISDBModel.Revinew" />
     <EntitySet Name="sysdiagrams" EntityType="MISDBModel.sysdiagram" />
     <AssociationSet Name="FK_DailyFollowUpInfo_FollowUpTable" Association="MISDBModel.FK_DailyFollowUpInfo_FollowUpTable">
       <End Role="FollowUpTable" EntitySet="FollowUpTables" />
       <End Role="DailyFollowUpInfo" EntitySet="DailyFollowUpInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDetail_DepartmentInfo" Association="MISDBModel.FK_ProductDetail_DepartmentInfo">
+      <End Role="DepartmentInfo" EntitySet="DepartmentInfoes" />
+      <End Role="ProductDetail" EntitySet="ProductDetails" />
     </AssociationSet>
     <AssociationSet Name="FK_FollowUpTable_PurposeInfo" Association="MISDBModel.FK_FollowUpTable_PurposeInfo">
       <End Role="PurposeInfo" EntitySet="PurposeInfoes" />
@@ -156,6 +166,11 @@
     <Property Type="String" Name="FollowUp" Nullable="true" MaxLength="200" />
     <Property Type="Int32" Name="PId" Nullable="true" />
   </ComplexType>
+  <ComplexType Name="SP_7_Days_Data_Analysis_Result">
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="Int32" Name="MoneyType" Nullable="true" />
+    <Property Type="Int32" Name="Money" Nullable="true" />
+  </ComplexType>
   <EntityType Name="DailyFollowUpInfo">
     <Key>
       <PropertyRef Name="Id" />
@@ -166,6 +181,14 @@
     <Property Name="Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="F_Date" Type="DateTime" Precision="0" />
     <NavigationProperty Name="FollowUpTable" Relationship="MISDBModel.FK_DailyFollowUpInfo_FollowUpTable" FromRole="DailyFollowUpInfo" ToRole="FollowUpTable" />
+  </EntityType>
+  <EntityType Name="DepartmentInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dep_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProductDetails" Relationship="MISDBModel.FK_ProductDetail_DepartmentInfo" FromRole="DepartmentInfo" ToRole="ProductDetail" />
   </EntityType>
   <EntityType Name="FollowUpTable">
     <Key>
@@ -213,6 +236,17 @@
     <Property Name="PostName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="PersonInfoTables" Relationship="MISDBModel.FK_PersonInfoTable_PostInfoTable" FromRole="PostInfoTable" ToRole="PersonInfoTable" />
   </EntityType>
+  <EntityType Name="ProductDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="P_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="P_DepartmentId" Type="Int32" />
+    <Property Name="P_PurchasePrice" Type="Int32" />
+    <Property Name="P_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DepartmentInfo" Relationship="MISDBModel.FK_ProductDetail_DepartmentInfo" FromRole="ProductDetail" ToRole="DepartmentInfo" />
+  </EntityType>
   <EntityType Name="PurposeInfo">
     <Key>
       <PropertyRef Name="PId" />
@@ -247,6 +281,18 @@
       </Principal>
       <Dependent Role="DailyFollowUpInfo">
         <PropertyRef Name="F_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDetail_DepartmentInfo">
+    <End Type="MISDBModel.DepartmentInfo" Role="DepartmentInfo" Multiplicity="0..1" />
+    <End Type="MISDBModel.ProductDetail" Role="ProductDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartmentInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductDetail">
+        <PropertyRef Name="P_DepartmentId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
