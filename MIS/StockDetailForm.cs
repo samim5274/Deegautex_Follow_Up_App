@@ -87,6 +87,6 @@ namespace MIS
                 clearText();
                 FillStock();
             }
-        }
+        }                
     }
 }

@@ -18,10 +18,10 @@ namespace MIS
         }
 
         private void StockOutForm_Load(object sender, EventArgs e)
-        {
-            ClearText();
+        {            
             FillReg();
             FillProduct();
+            ClearText();
         }
 
         private void ClearText()
@@ -79,30 +79,19 @@ namespace MIS
                 ClearText();
             }
         }
-
-        private void cbxProduct_SelectedValueChanged(object sender, EventArgs e)
-        {
-            //var db = new MISDBEntities();
-            //int x = Convert.ToInt32(cbxProduct.SelectedValue);
-            //var num = db.StockDetails.Where(a => a.P_Id.ToString() == x.ToString()).FirstOrDefault();
-
-            //textBox1.Text = num.Qty.ToString();
-        }
-
-        private void cbxProduct_ValueMemberChanged(object sender, EventArgs e)
-        {
-            //var db = new MISDBEntities();
-            //int x = Convert.ToInt32(cbxProduct.SelectedValue);
-            //var num = db.StockDetails.Where(a => a.P_Id.ToString() == x.ToString()).FirstOrDefault();            
-        }
-
+        
         private void cbxProduct_SelectionChangeCommitted(object sender, EventArgs e)
         {
             var db = new MISDBEntities();
             lblQty.Text = cbxProduct.GetItemText(cbxProduct.SelectedValue);
-            var num = db.StockDetails.Where(a => a.P_Id.ToString() == lblQty.Text).FirstOrDefault();
+            var num = db.StockDetails.Where(a => a.P_Id.ToString() == lblQty.Text).FirstOrDefault();            
+            dataGridView1.DataSource = db.StockDetails.Where(a => a.P_Id.ToString() == lblQty.Text).ToList();
 
-            textBox1.Text = num.Qty.ToString();
+            lblTotalQty.Text = "0";
+            for (int i = 0; i < dataGridView1.Rows.Count; i = i + 1)
+            {
+                lblTotalQty.Text = Convert.ToString(double.Parse(lblTotalQty.Text) + double.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+            }
         }
     }
 }
