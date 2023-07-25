@@ -18,7 +18,7 @@ namespace MIS
         }
 
         private void StockOutForm_Load(object sender, EventArgs e)
-        {            
+        {
             FillReg();
             FillProduct();
             ClearText();
@@ -58,7 +58,19 @@ namespace MIS
             if (txtQty.Text == "")
             {
                 btnSave.Enabled = false;
-            }            
+            }
+
+            if (txtQty.Text == null || txtQtyUp.Text == null)
+            {
+                txtQty.Text = "0";
+                txtQtyUp.Text = "0";
+            }
+            else if (txtQty.Text != null && txtQtyUp.Text != null)
+            {
+                if (txtQty.Text == "") { txtQty.Text = "0"; }
+                else if (txtQtyUp.Text == "") { txtQtyUp.Text = "0"; }
+                txtQtyUpResult.Text = (Convert.ToDouble(txtQtyUp.Text) - Convert.ToDouble(txtQty.Text)).ToString();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -79,19 +91,35 @@ namespace MIS
                 ClearText();
             }
         }
-        
+
         private void cbxProduct_SelectionChangeCommitted(object sender, EventArgs e)
         {
             var db = new MISDBEntities();
             lblQty.Text = cbxProduct.GetItemText(cbxProduct.SelectedValue);
-            var num = db.StockDetails.Where(a => a.P_Id.ToString() == lblQty.Text).FirstOrDefault();            
+            var num = db.StockDetails.Where(a => a.P_Id.ToString() == lblQty.Text).FirstOrDefault();
             dataGridView1.DataSource = db.StockDetails.Where(a => a.P_Id.ToString() == lblQty.Text).ToList();
 
-            lblTotalQty.Text = "0";
+            txtQtyUp.Text = "0";
             for (int i = 0; i < dataGridView1.Rows.Count; i = i + 1)
             {
-                lblTotalQty.Text = Convert.ToString(double.Parse(lblTotalQty.Text) + double.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+                txtQtyUp.Text = Convert.ToString(double.Parse(txtQtyUp.Text) + double.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString()));
             }
+
+        }
+
+        private void txtQtyUp_TextChanged(object sender, EventArgs e)
+        {
+            if (txtQty.Text == null || txtQtyUp.Text == null)
+            {
+                txtQty.Text = "0";
+                txtQtyUp.Text = "0";
+            }
+            else if (txtQty.Text != null && txtQtyUp.Text != null)
+            {
+                if (txtQty.Text == "") { txtQty.Text = "0"; }
+                else if (txtQtyUp.Text=="") { txtQtyUp.Text = "0"; }               
+                txtQtyUpResult.Text = (Convert.ToDouble(txtQtyUp.Text) - Convert.ToDouble(txtQty.Text)).ToString();
+            }            
         }
     }
 }

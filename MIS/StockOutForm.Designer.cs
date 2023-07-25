@@ -43,9 +43,12 @@
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.lblQty = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblTotalQty = new System.Windows.Forms.Label();
+            this.txtQtyUp = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtQtyUpResult = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblReg
@@ -173,7 +176,7 @@
             // lblQty
             // 
             this.lblQty.AutoSize = true;
-            this.lblQty.Location = new System.Drawing.Point(684, 81);
+            this.lblQty.Location = new System.Drawing.Point(6, 36);
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(38, 25);
             this.lblQty.TabIndex = 4;
@@ -182,20 +185,41 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(679, 113);
+            this.dataGridView1.Location = new System.Drawing.Point(50, 35);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(48, 30);
+            this.dataGridView1.Size = new System.Drawing.Size(328, 189);
             this.dataGridView1.TabIndex = 9;
             // 
-            // lblTotalQty
+            // txtQtyUp
             // 
-            this.lblTotalQty.AutoSize = true;
-            this.lblTotalQty.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalQty.Location = new System.Drawing.Point(676, 162);
-            this.lblTotalQty.Name = "lblTotalQty";
-            this.lblTotalQty.Size = new System.Drawing.Size(55, 37);
-            this.lblTotalQty.TabIndex = 10;
-            this.lblTotalQty.Text = "qty";
+            this.txtQtyUp.Enabled = false;
+            this.txtQtyUp.Location = new System.Drawing.Point(80, 247);
+            this.txtQtyUp.Name = "txtQtyUp";
+            this.txtQtyUp.Size = new System.Drawing.Size(278, 33);
+            this.txtQtyUp.TabIndex = 11;
+            this.txtQtyUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQtyUp.TextChanged += new System.EventHandler(this.txtQtyUp_TextChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtQtyUpResult);
+            this.groupBox2.Controls.Add(this.lblQty);
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.txtQtyUp);
+            this.groupBox2.Location = new System.Drawing.Point(659, 130);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(406, 448);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            // 
+            // txtQtyUpResult
+            // 
+            this.txtQtyUpResult.Enabled = false;
+            this.txtQtyUpResult.Location = new System.Drawing.Point(80, 307);
+            this.txtQtyUpResult.Name = "txtQtyUpResult";
+            this.txtQtyUpResult.Size = new System.Drawing.Size(278, 33);
+            this.txtQtyUpResult.TabIndex = 13;
+            this.txtQtyUpResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // StockOutForm
             // 
@@ -203,9 +227,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1264, 729);
-            this.Controls.Add(this.lblTotalQty);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.lblQty);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -219,6 +241,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,6 +265,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblQty;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lblTotalQty;
+        private System.Windows.Forms.TextBox txtQtyUp;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtQtyUpResult;
     }
 }
