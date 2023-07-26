@@ -206,6 +206,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ProductStockDetails">
+      <EntityTypeMapping TypeName="MISDBModel.ProductStockDetail">
+        <MappingFragment StoreEntitySet="ProductStockDetail">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="OutQty" ColumnName="OutQty" />
+          <ScalarProperty Name="InQty" ColumnName="InQty" />
+          <ScalarProperty Name="P_Id" ColumnName="P_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="PurposeInfoes">
       <EntityTypeMapping TypeName="MISDBModel.PurposeInfo">
         <MappingFragment StoreEntitySet="PurposeInfo">

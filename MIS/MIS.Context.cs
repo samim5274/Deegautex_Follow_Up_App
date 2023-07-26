@@ -49,6 +49,8 @@ public partial class MISDBEntities : DbContext
 
     public virtual DbSet<ProductDetail> ProductDetails { get; set; }
 
+    public virtual DbSet<ProductStockDetail> ProductStockDetails { get; set; }
+
     public virtual DbSet<PurposeInfo> PurposeInfoes { get; set; }
 
     public virtual DbSet<Revinew> Revinews { get; set; }

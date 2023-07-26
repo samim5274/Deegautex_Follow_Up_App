@@ -22,6 +22,8 @@ public partial class ProductDetail
     public ProductDetail()
     {
 
+        this.ProductStockDetails = new HashSet<ProductStockDetail>();
+
         this.StockDetails = new HashSet<StockDetail>();
 
         this.StockOutDetails = new HashSet<StockOutDetail>();
@@ -42,6 +44,10 @@ public partial class ProductDetail
 
 
     public virtual DepartmentInfo DepartmentInfo { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+    public virtual ICollection<ProductStockDetail> ProductStockDetails { get; set; }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 

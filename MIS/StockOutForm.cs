@@ -30,6 +30,9 @@ namespace MIS
             cbxProduct.Text = string.Empty;
             txtQty.Text = string.Empty;
             txtRemark.Text = string.Empty;
+            lblTotalAvailable.Text = string.Empty;
+            lblTotalOut.Text = string.Empty;
+            lblTotalStock.Text = string.Empty;
         }
 
         private void FillProduct()
@@ -81,9 +84,11 @@ namespace MIS
                 var tb = new StockOutDetail();
 
                 tb.Reg = Convert.ToInt32(lblReg.Text);
+                tb.ReceiverName = txtReceiver.Text.Trim();
                 tb.P_Id = Convert.ToInt32(cbxProduct.SelectedValue);
                 tb.Date = Convert.ToDateTime(dtpDate.Value);
                 tb.Qty = Convert.ToInt32(txtQty.Text.Trim());
+                tb.Remark = txtReceiver.Text.Trim();
 
                 db.StockOutDetails.Add(tb);
                 db.SaveChanges();
@@ -95,31 +100,25 @@ namespace MIS
         private void cbxProduct_SelectionChangeCommitted(object sender, EventArgs e)
         {
             var db = new MISDBEntities();
-            lblQty.Text = cbxProduct.GetItemText(cbxProduct.SelectedValue);
-            var num = db.StockDetails.Where(a => a.P_Id.ToString() == lblQty.Text).FirstOrDefault();
-            dataGridView1.DataSource = db.StockDetails.Where(a => a.P_Id.ToString() == lblQty.Text).ToList();
+            string getPId;
+            getPId = cbxProduct.GetItemText(cbxProduct.SelectedValue);
 
-            txtQtyUp.Text = "0";
+            //var num = db.ProductStockDetails.Where(a => a.P_Id.ToString() == lblQty.Text).FirstOrDefault();
+
+            dataGridView1.DataSource = db.ProductStockDetails.Where(a => a.P_Id.ToString() == getPId).ToList();
+
+            lblTotalStock.Text = "0";
+            lblTotalOut.Text = "0";
+            lblTotalAvailable.Text = "0";
             for (int i = 0; i < dataGridView1.Rows.Count; i = i + 1)
             {
-                txtQtyUp.Text = Convert.ToString(double.Parse(txtQtyUp.Text) + double.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+                lblTotalStock.Text = Convert.ToString(double.Parse(lblTotalStock.Text) + double.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));
+                lblTotalOut.Text = Convert.ToString(double.Parse(lblTotalOut.Text) + double.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString()));
             }
-
-        }
-
-        private void txtQtyUp_TextChanged(object sender, EventArgs e)
-        {
-            if (txtQty.Text == null || txtQtyUp.Text == null)
-            {
-                txtQty.Text = "0";
-                txtQtyUp.Text = "0";
-            }
-            else if (txtQty.Text != null && txtQtyUp.Text != null)
-            {
-                if (txtQty.Text == "") { txtQty.Text = "0"; }
-                else if (txtQtyUp.Text=="") { txtQtyUp.Text = "0"; }               
-                txtQtyUpResult.Text = (Convert.ToDouble(txtQtyUp.Text) - Convert.ToDouble(txtQty.Text)).ToString();
-            }            
-        }
+            double TotalAvailable = Convert.ToDouble(lblTotalStock.Text) - Convert.ToDouble(lblTotalOut.Text);
+            lblTotalStock.Text = "Total In Stock: " + lblTotalStock.Text;
+            lblTotalOut.Text = "Total Out Stock: " + lblTotalOut.Text;
+            lblTotalAvailable.Text = "Total Available Stock: " + TotalAvailable;
+        }        
     }
 }

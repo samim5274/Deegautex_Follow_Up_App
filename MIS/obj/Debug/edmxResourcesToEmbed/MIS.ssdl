@@ -69,6 +69,17 @@
     <Property Name="P_PurchasePrice" Type="int" />
     <Property Name="P_Description" Type="varchar" MaxLength="500" />
   </EntityType>
+  <EntityType Name="ProductStockDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="P_Id" Type="int" />
+    <Property Name="InQty" Type="int" />
+    <Property Name="OutQty" Type="int" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
   <EntityType Name="PurposeInfo">
     <Key>
       <PropertyRef Name="PId" />
@@ -163,6 +174,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ProductStockDetail_ProductDetail">
+    <End Role="ProductDetail" Type="Self.ProductDetail" Multiplicity="0..1" />
+    <End Role="ProductStockDetail" Type="Self.ProductStockDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductStockDetail">
+        <PropertyRef Name="P_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_StockDetail_ProductDetail">
     <End Role="ProductDetail" Type="Self.ProductDetail" Multiplicity="0..1" />
     <End Role="StockDetail" Type="Self.StockDetail" Multiplicity="*" />
@@ -254,6 +277,7 @@
     <EntitySet Name="PersonInfoTable" EntityType="Self.PersonInfoTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PostInfoTable" EntityType="Self.PostInfoTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProductDetail" EntityType="Self.ProductDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductStockDetail" EntityType="Self.ProductStockDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PurposeInfo" EntityType="Self.PurposeInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Revinew" EntityType="Self.Revinew" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StockDetail" EntityType="Self.StockDetail" Schema="dbo" store:Type="Tables" />
@@ -274,6 +298,10 @@
     <AssociationSet Name="FK_ProductDetail_DepartmentInfo" Association="Self.FK_ProductDetail_DepartmentInfo">
       <End Role="DepartmentInfo" EntitySet="DepartmentInfo" />
       <End Role="ProductDetail" EntitySet="ProductDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductStockDetail_ProductDetail" Association="Self.FK_ProductStockDetail_ProductDetail">
+      <End Role="ProductDetail" EntitySet="ProductDetail" />
+      <End Role="ProductStockDetail" EntitySet="ProductStockDetail" />
     </AssociationSet>
     <AssociationSet Name="FK_StockDetail_ProductDetail" Association="Self.FK_StockDetail_ProductDetail">
       <End Role="ProductDetail" EntitySet="ProductDetail" />

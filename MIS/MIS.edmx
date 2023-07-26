@@ -74,6 +74,17 @@
           <Property Name="P_PurchasePrice" Type="int" />
           <Property Name="P_Description" Type="varchar" MaxLength="500" />
         </EntityType>
+        <EntityType Name="ProductStockDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="P_Id" Type="int" />
+          <Property Name="InQty" Type="int" />
+          <Property Name="OutQty" Type="int" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Type" Type="int" />
+        </EntityType>
         <EntityType Name="PurposeInfo">
           <Key>
             <PropertyRef Name="PId" />
@@ -168,6 +179,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ProductStockDetail_ProductDetail">
+          <End Role="ProductDetail" Type="Self.ProductDetail" Multiplicity="0..1" />
+          <End Role="ProductStockDetail" Type="Self.ProductStockDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductDetail">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductStockDetail">
+              <PropertyRef Name="P_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_StockDetail_ProductDetail">
           <End Role="ProductDetail" Type="Self.ProductDetail" Multiplicity="0..1" />
           <End Role="StockDetail" Type="Self.StockDetail" Multiplicity="*" />
@@ -259,6 +282,7 @@
           <EntitySet Name="PersonInfoTable" EntityType="Self.PersonInfoTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PostInfoTable" EntityType="Self.PostInfoTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductDetail" EntityType="Self.ProductDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductStockDetail" EntityType="Self.ProductStockDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PurposeInfo" EntityType="Self.PurposeInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Revinew" EntityType="Self.Revinew" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StockDetail" EntityType="Self.StockDetail" Schema="dbo" store:Type="Tables" />
@@ -279,6 +303,10 @@
           <AssociationSet Name="FK_ProductDetail_DepartmentInfo" Association="Self.FK_ProductDetail_DepartmentInfo">
             <End Role="DepartmentInfo" EntitySet="DepartmentInfo" />
             <End Role="ProductDetail" EntitySet="ProductDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductStockDetail_ProductDetail" Association="Self.FK_ProductStockDetail_ProductDetail">
+            <End Role="ProductDetail" EntitySet="ProductDetail" />
+            <End Role="ProductStockDetail" EntitySet="ProductStockDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_StockDetail_ProductDetail" Association="Self.FK_StockDetail_ProductDetail">
             <End Role="ProductDetail" EntitySet="ProductDetail" />
@@ -362,6 +390,7 @@
           <EntitySet Name="PersonInfoTables" EntityType="MISDBModel.PersonInfoTable" />
           <EntitySet Name="PostInfoTables" EntityType="MISDBModel.PostInfoTable" />
           <EntitySet Name="ProductDetails" EntityType="MISDBModel.ProductDetail" />
+          <EntitySet Name="ProductStockDetails" EntityType="MISDBModel.ProductStockDetail" />
           <EntitySet Name="PurposeInfoes" EntityType="MISDBModel.PurposeInfo" />
           <EntitySet Name="Revinews" EntityType="MISDBModel.Revinew" />
           <EntitySet Name="StockDetails" EntityType="MISDBModel.StockDetail" />
@@ -382,6 +411,10 @@
           <AssociationSet Name="FK_PersonInfoTable_PostInfoTable" Association="MISDBModel.FK_PersonInfoTable_PostInfoTable">
             <End Role="PostInfoTable" EntitySet="PostInfoTables" />
             <End Role="PersonInfoTable" EntitySet="PersonInfoTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductStockDetail_ProductDetail" Association="MISDBModel.FK_ProductStockDetail_ProductDetail">
+            <End Role="ProductDetail" EntitySet="ProductDetails" />
+            <End Role="ProductStockDetail" EntitySet="ProductStockDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_StockDetail_ProductDetail" Association="MISDBModel.FK_StockDetail_ProductDetail">
             <End Role="ProductDetail" EntitySet="ProductDetails" />
@@ -549,8 +582,21 @@
           <Property Name="P_PurchasePrice" Type="Int32" />
           <Property Name="P_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="DepartmentInfo" Relationship="MISDBModel.FK_ProductDetail_DepartmentInfo" FromRole="ProductDetail" ToRole="DepartmentInfo" />
+          <NavigationProperty Name="ProductStockDetails" Relationship="MISDBModel.FK_ProductStockDetail_ProductDetail" FromRole="ProductDetail" ToRole="ProductStockDetail" />
           <NavigationProperty Name="StockDetails" Relationship="MISDBModel.FK_StockDetail_ProductDetail" FromRole="ProductDetail" ToRole="StockDetail" />
           <NavigationProperty Name="StockOutDetails" Relationship="MISDBModel.FK_StockOutDetail_ProductDetail" FromRole="ProductDetail" ToRole="StockOutDetail" />
+        </EntityType>
+        <EntityType Name="ProductStockDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="P_Id" Type="Int32" />
+          <Property Name="InQty" Type="Int32" />
+          <Property Name="OutQty" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Type" Type="Int32" />
+          <NavigationProperty Name="ProductDetail" Relationship="MISDBModel.FK_ProductStockDetail_ProductDetail" FromRole="ProductStockDetail" ToRole="ProductDetail" />
         </EntityType>
         <EntityType Name="PurposeInfo">
           <Key>
@@ -646,6 +692,18 @@
             </Principal>
             <Dependent Role="PersonInfoTable">
               <PropertyRef Name="P_PostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductStockDetail_ProductDetail">
+          <End Type="MISDBModel.ProductDetail" Role="ProductDetail" Multiplicity="0..1" />
+          <End Type="MISDBModel.ProductStockDetail" Role="ProductStockDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductDetail">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductStockDetail">
+              <PropertyRef Name="P_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -880,6 +938,18 @@
                 <ScalarProperty Name="P_PurchasePrice" ColumnName="P_PurchasePrice" />
                 <ScalarProperty Name="P_DepartmentId" ColumnName="P_DepartmentId" />
                 <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductStockDetails">
+            <EntityTypeMapping TypeName="MISDBModel.ProductStockDetail">
+              <MappingFragment StoreEntitySet="ProductStockDetail">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="OutQty" ColumnName="OutQty" />
+                <ScalarProperty Name="InQty" ColumnName="InQty" />
+                <ScalarProperty Name="P_Id" ColumnName="P_Id" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

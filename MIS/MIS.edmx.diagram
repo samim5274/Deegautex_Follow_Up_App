@@ -6,21 +6,23 @@
     <edmx:Diagrams>
       <Diagram DiagramId="21dc5da23e02437ab9deace1575160ff" Name="Diagram1">
         <EntityTypeShape EntityType="MISDBModel.DailyFollowUpInfo" Width="1.5" PointX="12.25" PointY="1" />
-        <EntityTypeShape EntityType="MISDBModel.DepartmentInfo" Width="1.5" PointX="0.75" PointY="3.125" />
+        <EntityTypeShape EntityType="MISDBModel.DepartmentInfo" Width="1.5" PointX="0.75" PointY="5" />
         <EntityTypeShape EntityType="MISDBModel.FollowUpTable" Width="1.5" PointX="10" PointY="1" />
-        <EntityTypeShape EntityType="MISDBModel.GiveAndReciveDeailTable" Width="1.5" PointX="7.75" PointY="4.75" />
-        <EntityTypeShape EntityType="MISDBModel.PersonInfoTable" Width="1.5" PointX="3" PointY="8" />
-        <EntityTypeShape EntityType="MISDBModel.PostInfoTable" Width="1.5" PointX="0.75" PointY="8.625" />
-        <EntityTypeShape EntityType="MISDBModel.ProductDetail" Width="1.5" PointX="3" PointY="2.625" />
+        <EntityTypeShape EntityType="MISDBModel.GiveAndReciveDeailTable" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MISDBModel.PersonInfoTable" Width="1.5" PointX="10" PointY="5" />
+        <EntityTypeShape EntityType="MISDBModel.PostInfoTable" Width="1.5" PointX="7.75" PointY="5.625" />
+        <EntityTypeShape EntityType="MISDBModel.ProductDetail" Width="1.5" PointX="3" PointY="4.375" />
+        <EntityTypeShape EntityType="MISDBModel.ProductStockDetail" Width="1.5" PointX="5.25" PointY="7.75" />
         <EntityTypeShape EntityType="MISDBModel.PurposeInfo" Width="1.5" PointX="7.75" PointY="1.25" />
-        <EntityTypeShape EntityType="MISDBModel.Revinew" Width="1.5" PointX="5.75" PointY="8.75" />
-        <EntityTypeShape EntityType="MISDBModel.StockDetail" Width="1.5" PointX="5.25" PointY="1.125" />
-        <EntityTypeShape EntityType="MISDBModel.StockOutDetail" Width="1.5" PointX="5.25" PointY="4.125" />
+        <EntityTypeShape EntityType="MISDBModel.Revinew" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="MISDBModel.StockDetail" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="MISDBModel.StockOutDetail" Width="1.5" PointX="5.25" PointY="4.375" />
         <EntityTypeShape EntityType="MISDBModel.sysdiagram" Width="1.5" PointX="7.75" PointY="8.75" />
         <AssociationConnector Association="MISDBModel.FK_DailyFollowUpInfo_FollowUpTable" />
         <AssociationConnector Association="MISDBModel.FK_ProductDetail_DepartmentInfo" />
         <AssociationConnector Association="MISDBModel.FK_FollowUpTable_PurposeInfo" />
         <AssociationConnector Association="MISDBModel.FK_PersonInfoTable_PostInfoTable" />
+        <AssociationConnector Association="MISDBModel.FK_ProductStockDetail_ProductDetail" />
         <AssociationConnector Association="MISDBModel.FK_StockDetail_ProductDetail" />
         <AssociationConnector Association="MISDBModel.FK_StockOutDetail_ProductDetail" />
       </Diagram>

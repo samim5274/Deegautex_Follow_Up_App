@@ -103,5 +103,19 @@ namespace MIS
             obj.MdiParent = this;
             obj.Show();
         }
+
+        private void stockDetailInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var obj = new ProductStockInDetailForm();
+            obj.MdiParent = this;
+            obj.Show();
+        }
+
+        private void stockOutDetailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var obj = new ProductStocOutDetailForm();
+            obj.MdiParent = this;
+            obj.Show();
+        }
     }
 }
