@@ -65,3 +65,4 @@ F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.StockDet
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.StockOutForm.resources
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.ProductStockInDetailForm.resources
 F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.ProductStocOutDetailForm.resources
+F:\IT\Application\Desktop App\Deegautex_Follow_Up_App\MIS\obj\Debug\MIS.csprojResolveAssemblyReference.cache

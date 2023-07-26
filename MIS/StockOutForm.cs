@@ -12,6 +12,7 @@ namespace MIS
 {
     public partial class StockOutForm : Form
     {
+        public double x, y;
         public StockOutForm()
         {
             InitializeComponent();
@@ -62,38 +63,54 @@ namespace MIS
             {
                 btnSave.Enabled = false;
             }
-
-            if (txtQty.Text == null || txtQtyUp.Text == null)
+            try
             {
-                txtQty.Text = "0";
-                txtQtyUp.Text = "0";
+                y = x - Convert.ToDouble(txtQty.Text);
+                //label4.Text = y.ToString();
             }
-            else if (txtQty.Text != null && txtQtyUp.Text != null)
+            catch (Exception)
             {
-                if (txtQty.Text == "") { txtQty.Text = "0"; }
-                else if (txtQtyUp.Text == "") { txtQtyUp.Text = "0"; }
-                txtQtyUpResult.Text = (Convert.ToDouble(txtQtyUp.Text) - Convert.ToDouble(txtQty.Text)).ToString();
+                //MessageBox.Show(@"Please input currect formate and currect qty. Thank you.", "Foramte invalid!", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(@"Are you went to save product information?", "Save Info", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (y < 0)
             {
-                var db = new MISDBEntities();
-                var tb = new StockOutDetail();
+                MessageBox.Show(@"Store product qty not available. First input product qty and try again. Thank you.", "Stock Qty Transfer Faild!", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+            else if (y >= 0)
+            {
+                if (MessageBox.Show(@"Are you went to save product information?", "Save Info", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    var db = new MISDBEntities();
+                    var tb = new StockOutDetail();
+                    var tb2 = new ProductStockDetail();
+                    int outIn = 0, type = 1;
+                    tb.Reg = Convert.ToInt32(lblReg.Text);
+                    tb.ReceiverName = txtReceiver.Text.Trim();
+                    tb.P_Id = Convert.ToInt32(cbxProduct.SelectedValue);
+                    tb.Date = Convert.ToDateTime(dtpDate.Value);
+                    tb.Qty = Convert.ToInt32(txtQty.Text.Trim());
+                    tb.Remark = txtRemark.Text.Trim();
+                    
+                    tb2.P_Id = Convert.ToInt32(cbxProduct.SelectedValue);
+                    tb2.Date = Convert.ToDateTime(dtpDate.Value);
+                    tb2.OutQty = Convert.ToInt32(txtQty.Text.Trim());
+                    tb2.InQty = Convert.ToInt32(outIn);
+                    tb2.Type = Convert.ToInt32(type);
 
-                tb.Reg = Convert.ToInt32(lblReg.Text);
-                tb.ReceiverName = txtReceiver.Text.Trim();
-                tb.P_Id = Convert.ToInt32(cbxProduct.SelectedValue);
-                tb.Date = Convert.ToDateTime(dtpDate.Value);
-                tb.Qty = Convert.ToInt32(txtQty.Text.Trim());
-                tb.Remark = txtReceiver.Text.Trim();
-
-                db.StockOutDetails.Add(tb);
-                db.SaveChanges();
-                FillReg();
-                ClearText();
+                    db.StockOutDetails.Add(tb);
+                    db.ProductStockDetails.Add(tb2);
+                    db.SaveChanges();
+                    FillReg();
+                    ClearText();
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"Store product qty not available. First input product qty and try again. Thank you.", "Stock Qty Transfer Faild!", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
         }
 
@@ -102,11 +119,7 @@ namespace MIS
             var db = new MISDBEntities();
             string getPId;
             getPId = cbxProduct.GetItemText(cbxProduct.SelectedValue);
-
-            //var num = db.ProductStockDetails.Where(a => a.P_Id.ToString() == lblQty.Text).FirstOrDefault();
-
             dataGridView1.DataSource = db.ProductStockDetails.Where(a => a.P_Id.ToString() == getPId).ToList();
-
             lblTotalStock.Text = "0";
             lblTotalOut.Text = "0";
             lblTotalAvailable.Text = "0";
@@ -116,9 +129,10 @@ namespace MIS
                 lblTotalOut.Text = Convert.ToString(double.Parse(lblTotalOut.Text) + double.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString()));
             }
             double TotalAvailable = Convert.ToDouble(lblTotalStock.Text) - Convert.ToDouble(lblTotalOut.Text);
+            x = TotalAvailable;
             lblTotalStock.Text = "Total In Stock: " + lblTotalStock.Text;
             lblTotalOut.Text = "Total Out Stock: " + lblTotalOut.Text;
             lblTotalAvailable.Text = "Total Available Stock: " + TotalAvailable;
-        }        
+        }
     }
 }

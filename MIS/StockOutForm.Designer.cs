@@ -42,12 +42,10 @@
             this.txtReceiver = new System.Windows.Forms.TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtQtyUp = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtQtyUpResult = new System.Windows.Forms.TextBox();
-            this.lblTotalStock = new System.Windows.Forms.Label();
-            this.lblTotalOut = new System.Windows.Forms.Label();
             this.lblTotalAvailable = new System.Windows.Forms.Label();
+            this.lblTotalOut = new System.Windows.Forms.Label();
+            this.lblTotalStock = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -178,70 +176,49 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(50, 35);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 32);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(328, 189);
+            this.dataGridView1.Size = new System.Drawing.Size(366, 257);
             this.dataGridView1.TabIndex = 9;
-            // 
-            // txtQtyUp
-            // 
-            this.txtQtyUp.Enabled = false;
-            this.txtQtyUp.Location = new System.Drawing.Point(76, 387);
-            this.txtQtyUp.Name = "txtQtyUp";
-            this.txtQtyUp.Size = new System.Drawing.Size(278, 33);
-            this.txtQtyUp.TabIndex = 11;
-            this.txtQtyUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //this.txtQtyUp.TextChanged += new System.EventHandler(this.txtQtyUp_TextChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lblTotalAvailable);
             this.groupBox2.Controls.Add(this.lblTotalOut);
             this.groupBox2.Controls.Add(this.lblTotalStock);
-            this.groupBox2.Controls.Add(this.txtQtyUpResult);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Controls.Add(this.txtQtyUp);
             this.groupBox2.Location = new System.Drawing.Point(659, 113);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(406, 465);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             // 
-            // txtQtyUpResult
+            // lblTotalAvailable
             // 
-            this.txtQtyUpResult.Enabled = false;
-            this.txtQtyUpResult.Location = new System.Drawing.Point(76, 426);
-            this.txtQtyUpResult.Name = "txtQtyUpResult";
-            this.txtQtyUpResult.Size = new System.Drawing.Size(278, 33);
-            this.txtQtyUpResult.TabIndex = 13;
-            this.txtQtyUpResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblTotalStock
-            // 
-            this.lblTotalStock.AutoSize = true;
-            this.lblTotalStock.Location = new System.Drawing.Point(71, 238);
-            this.lblTotalStock.Name = "lblTotalStock";
-            this.lblTotalStock.Size = new System.Drawing.Size(63, 25);
-            this.lblTotalStock.TabIndex = 14;
-            this.lblTotalStock.Text = "label6";
+            this.lblTotalAvailable.AutoSize = true;
+            this.lblTotalAvailable.Location = new System.Drawing.Point(17, 376);
+            this.lblTotalAvailable.Name = "lblTotalAvailable";
+            this.lblTotalAvailable.Size = new System.Drawing.Size(63, 25);
+            this.lblTotalAvailable.TabIndex = 16;
+            this.lblTotalAvailable.Text = "label6";
             // 
             // lblTotalOut
             // 
             this.lblTotalOut.AutoSize = true;
-            this.lblTotalOut.Location = new System.Drawing.Point(71, 275);
+            this.lblTotalOut.Location = new System.Drawing.Point(222, 319);
             this.lblTotalOut.Name = "lblTotalOut";
             this.lblTotalOut.Size = new System.Drawing.Size(63, 25);
             this.lblTotalOut.TabIndex = 15;
             this.lblTotalOut.Text = "label6";
             // 
-            // lblTotalAvailable
+            // lblTotalStock
             // 
-            this.lblTotalAvailable.AutoSize = true;
-            this.lblTotalAvailable.Location = new System.Drawing.Point(71, 317);
-            this.lblTotalAvailable.Name = "lblTotalAvailable";
-            this.lblTotalAvailable.Size = new System.Drawing.Size(63, 25);
-            this.lblTotalAvailable.TabIndex = 16;
-            this.lblTotalAvailable.Text = "label6";
+            this.lblTotalStock.AutoSize = true;
+            this.lblTotalStock.Location = new System.Drawing.Point(17, 319);
+            this.lblTotalStock.Name = "lblTotalStock";
+            this.lblTotalStock.Size = new System.Drawing.Size(63, 25);
+            this.lblTotalStock.TabIndex = 14;
+            this.lblTotalStock.Text = "label6";
             // 
             // StockOutForm
             // 
@@ -286,9 +263,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtQtyUp;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtQtyUpResult;
         private System.Windows.Forms.Label lblTotalAvailable;
         private System.Windows.Forms.Label lblTotalOut;
         private System.Windows.Forms.Label lblTotalStock;
